@@ -10,19 +10,6 @@
 	<ui:define name="content">
 		<h2>Lista de Bancos</h2>
 		<h:form>
-		
-		<div class="row">
-				<div class="col-sm-4">
-
-					<h:outputText value="Ingrese nombre del Banco que desea buscar"
-						for="banco" styleClass="control-label" />
-					<p:inputText id="banco"
-						value="#{bancoController.b.nombreBanco}"></p:inputText>
-					<p:commandButton value="Buscar"
-						actionListener="#{bancoController.findByNameBanco()}" update="lstBancos"></p:commandButton>
-				</div>
-			</div>
-		
 			<p:dataTable id="lstBancos" var="ba"
 				value="#{bancoController.listaBancos}" paginator="true"
 				paginatorPosition="top" emptyMessage="No existen registros"

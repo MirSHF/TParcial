@@ -1,7 +1,5 @@
 package pe.edu.upc.entities;
 
-import java.util.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -59,23 +57,4 @@ public class Magnitud {
 		EscalaMagnitud = escalaMagnitud;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(CodigoMagnitud);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Magnitud other = (Magnitud) obj;
-		return CodigoMagnitud == other.CodigoMagnitud;
-	}
-
-	
-	
 }

@@ -50,17 +50,4 @@ public class DistritoImpl implements CDistritoDao {
 		em.remove(dis);
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Distrito> findByNamDistrito(Distrito d) {
-		List<Distrito> lista = new ArrayList<Distrito>();
-		try {
-			Query q = em.createQuery("from Distrito d where d.nombreDistrito like ?1");
-			q.setParameter(1, "%" + d.getNombreDistrito() + "%");
-			lista = (List<Distrito>) q.getResultList();
-		} catch (Exception e) {
-			System.out.println("Error al buscar distrito en el DAO");
-		}
-		return lista;
-	}
 }

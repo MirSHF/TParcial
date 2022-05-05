@@ -17,7 +17,14 @@
 				value="#{renovacionController.r.codigoRenovacion}"
 				styleClass="form-control" required="true" />
 
-			
+			<h:outputLabel value="Tarjeta" StyleClass="label-control"
+				for="cboTarjeta" />
+			<p:selectOneMenu id="cboTarjeta"
+				value="#{renovacionController.r.tarjeta}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{renovacionController.listRenovacions}" var="z"
+					itemLabel="#{z.numerotarjeta}" itemValue="#{z}" />
+			</p:selectOneMenu>
 
 			<h:outputLabel value="Usuario" StyleClass="label-control"
 				for="cboUsuario" />

@@ -34,7 +34,9 @@ public class TarjetaController {
 		this.listaTarjetas = new ArrayList<Tarjeta>();
 		this.list();
 		this.listBancos();
-	}
+		this.listaTarjetas();
+		
+	}              
 
 	public String newTarjeta() {
 		this.setT(new Tarjeta());
@@ -61,6 +63,13 @@ public class TarjetaController {
 	public void listBancos() {
 		try {
 			lisBancos = bService.list();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public void listaTarjetas() {
+		try {
+			listaTarjetas = tService.list();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -110,7 +119,7 @@ public class TarjetaController {
 		this.lisBancos = lisBancos;
 	}
 
-
 	
+
 
 }

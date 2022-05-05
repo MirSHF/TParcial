@@ -56,14 +56,6 @@ public class BancoController {
 		bService.delete(banc.getCodigoBanco());
 		list();
 	}
-	
-	public void findByNameBanco() {
-		try {
-			listaBancos = bService.findByNameBanco(this.getB());
-		} catch (Exception e) {
-			System.out.println("Error al buscar en el controlador de banco");
-		}
-	}
 
 	// GETTER & SETTTERS
 	public Banco getB() {

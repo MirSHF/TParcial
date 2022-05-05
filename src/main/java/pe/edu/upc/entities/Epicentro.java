@@ -1,7 +1,5 @@
 package pe.edu.upc.entities;
 
-import java.util.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -70,23 +68,6 @@ public class Epicentro {
 
 	public void setRadioEpicentro(String radioEpicentro) {
 		this.radioEpicentro = radioEpicentro;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(codigoEpicentro);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Epicentro other = (Epicentro) obj;
-		return codigoEpicentro == other.codigoEpicentro;
 	}
 	
 	

@@ -59,4 +59,5 @@ public class Tarjeta {
 		this.codigobanco = codigobanco;
 	}
 
+	
 }

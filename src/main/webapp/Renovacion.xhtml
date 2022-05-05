@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="content">
+		<h2>Registro de Renovaciones</h2>
+		<h:form>
+			<h:outputLabel value="Codigo de Renovacion" or="id"
+				styleClass="control-label" />
+
+			<p:inputText id="id"
+				value="#{renovacionController.r.codigoRenovacion}"
+				styleClass="form-control" required="true" />
+
+			
+
+			<h:outputLabel value="Usuario" StyleClass="label-control"
+				for="cboUsuario" />
+			<p:selectOneMenu id="cboUsuario"
+				value="#{renovacionController.r.usuario}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{renovacionController.lisUsuarios}" var="u"
+					itemLabel="#{u.nombreUsuario}" itemValue="#{u}" />
+			</p:selectOneMenu>
+
+
+			<br />
+
+			<h:outputLabel value="Fecha de Renovacion" for="fecha"
+				styleClass="control-label" />
+			<p:calendar id="fecha" pattern="dd/MM/yyyy"
+				value="#{renovacionController.r.fecharenovacion}"
+				styleClass="form-control" showOn="button"
+				timeZone="America/Mexico_City" required="true">
+			</p:calendar>
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{renovacionController.insert()}"
+				action="Renovacion?faces-redirect=true" update="@form"></p:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="master.xhtml">
+	
+	<ui:define name="content">
+		<h2>Modificar Notificaciones</h2>
+		<h:form>
+
+			<h:outputLabel value="Codigo de la Notificacion"
+				styleClass="label-control" for="id" />
+			<p:inputText id="id" value="#{notificacionController.n.codigoNotificacion}"
+				styleClass="form-control" requiered="true"></p:inputText>
+
+
+
+			<h:outputLabel value="Nombre" for="nombre" styleClass="control-label" />
+			<p:inputText id="nombre" styleClass="form-control"
+				value="#{notificacionController.n.descripcionNotificacion}"></p:inputText>
+
+
+			<h:outputLabel value="Evento" styleClass="label-control"
+				for="cboEvento" />
+
+			<p:selectOneMenu id="cboEvento"
+				value="#{notificacionController.n.codigoEvento}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{notificacionController.listaEvento}" var="n"
+					itemLabel="#{n.nombreEvento}" itemValue="#{n}"></f:selectItems>
+			</p:selectOneMenu>
+
+
+			<p:commandButton value="Modificar"
+				actionListener="#{notificacionController.update()}"
+				action="notificacion?faces-redirect=true" update="@form"></p:commandButton>
+
+		</h:form>
+	</ui:define>
+	
+	</ui:composition>
+</html>

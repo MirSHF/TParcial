@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de vacunación</h2>
+		<h:form>
+
+			<h:outputLabel value="Codigo de vacunación"
+				styleClass="label-control" for="id" />
+			<p:inputText id="id" value="#{eventoController.ev.codigoEvento}"
+				styleClass="form-control" requiered="true"></p:inputText>
+
+
+
+			<h:outputLabel value="Nombre" for="nombre" styleClass="control-label" />
+			<p:inputText id="nombre" styleClass="form-control"
+				value="#{eventoController.ev.nombreEvento}"></p:inputText>
+
+			<h:outputLabel value="Descripción" for="descripcion"
+				styleClass="control-label" />
+			<p:inputText id="descripcion" styleClass="form-control"
+				value="#{eventoController.ev.descripcionEvento}"></p:inputText>
+
+			<h:outputLabel value="Magntitud" styleClass="label-control"
+				for="cboMagnitud" />
+
+			<p:selectOneMenu id="cboMagnitud"
+				value="#{eventoController.ev.magnitud}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{eventoController.listaMagnitudes}" var="m"
+					itemLabel="#{m.nombreMagnitud}" itemValue="#{m}"></f:selectItems>
+			</p:selectOneMenu>
+
+
+			<h:outputLabel value="Epicentro" styleClass="label-control"
+				for="cboEpicentro" />
+
+			<p:selectOneMenu id="cboEpicentro"
+				value="#{eventoController.ev.epicentro}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{eventoController.listaEpicentros}" var="e"
+					itemLabel="#{e.codigoEpicentro}" itemValue="#{e}"></f:selectItems>
+			</p:selectOneMenu>
+
+			<h:outputLabel value="Distrito" styleClass="label-control"
+				for="cboDistrito" />
+
+			<p:selectOneMenu id="cboDistrito"
+				value="#{eventoController.ev.distrito}"
+				converter="omnifaces.SelectItemsConverter">
+				<f:selectItems value="#{eventoController.listaDistritos}" var="d"
+					itemLabel="#{d.nombreDistrito}" itemValue="#{d}"></f:selectItems>
+			</p:selectOneMenu>
+			
+			<br />
+
+			<h:outputLabel value="Cantidad de afectados" for="cantidad"
+				styleClass="control-label" />
+			<p:inputText id="cantidad" styleClass="form-control"
+				value="#{eventoController.ev.cantidadAfectados}"></p:inputText>
+
+			<h:outputLabel value="Fecha" for="fecha" styleClass="control-label" />
+			<p:calendar id="fecha" pattern="dd/MM/yyyy"
+				value="#{eventoController.ev.fechaEvento}" showOn="button"
+				timeZone="America/Mexico_City" required="true"></p:calendar>
+
+			<p:commandButton value="Grabar"
+				actionListener="#{eventoController.insert()}"
+				action="evento?faces-redirect=true" update="@form"></p:commandButton>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

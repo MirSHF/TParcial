@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="content">
+		<h2>Lista de Epicentros</h2>
+		<h:form>
+			<p:dataTable id="lstEpicentros" var="ep"
+				value="#{epicentroController.listaEpicentro}" paginator="true"
+				paginatorPosition="top" emptyMessage="No existen registros"
+				rowIndexVar="item">
+
+				<p:column headerText="Id">
+					<h:outputText value="#{ep.codigoEpicentro}" />
+				</p:column>
+
+				<p:column headerText="Latitud">
+					<h:outputText value="#{ep.latitud}" />
+				</p:column>
+
+
+				<p:column headerText="Altitud">
+					<h:outputText value="#{ep.altitud}" />
+				</p:column>
+
+				<p:column headerText="Radio">
+					<h:outputText value="#{ep.radioEpicentro}" />
+				</p:column>
+
+				<p:column headerText="Operación">
+					<h:commandLink action="lstEpicentros"
+						actionListener="#{epicentroController.delete(ep)}">
+						Eliminar
+					</h:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+	<ui:define name="footerCont">
+	</ui:define>
+
+</ui:composition>
+</html>

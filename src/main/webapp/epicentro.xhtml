@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="master.xhtml">
+	
+	<ui:define name="content">
+		<h2>Registro de Epicentro</h2>
+		<h:form>
+
+			<h:outputLabel value="Id" for="id" styleClass="control-label" />
+			<p:inputText id = "id" styleClass="form-control"
+			value="#{epicentroController.e.codigoEpicentro}"></p:inputText>
+			
+			<h:outputLabel value="Latitud" for="latitud" styleClass="control-label" />
+			<p:inputText id = "latitud" styleClass="form-control"
+			value="#{epicentroController.e.latitud}"></p:inputText>
+			
+			<h:outputLabel value="Altitud" for="altitud" styleClass="control-label" />
+			<p:inputText id = "altitud" styleClass="form-control"
+			value="#{epicentroController.e.altitud}"></p:inputText>
+			
+			<h:outputLabel value="Radio" for="radio" styleClass="control-label" />
+			<p:inputText id = "radio" styleClass="form-control"
+			value="#{epicentroController.e.radioEpicentro}"></p:inputText>
+			
+			<p:commandButton value="Grabar"
+				actionListener="#{epicentroController.insert()}"
+				action="epicentro?faces-redirect=true" update="@form"></p:commandButton>
+			
+		</h:form> 
+	</ui:define>
+	
+	</ui:composition>
+</html>

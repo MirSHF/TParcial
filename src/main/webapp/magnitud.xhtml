@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de Magnitudes</h2>
+		<h:form>
+
+			<h:outputLabel value="Id" for="id" styleClass="control-label" />
+			<p:inputText id="id" styleClass="form-control"
+				value="#{magnitudController.m.codigoMagnitud}"></p:inputText>
+
+			<h:outputLabel value="Magnitud: " for="magnitud"
+				styleClass="control-label" />
+			<p:inputText id="magnitud" styleClass="form-control"
+				value="#{magnitudController.m.nombreMagnitud}"></p:inputText>
+
+
+			<h:outputLabel value="Escala: " for="escala"
+				styleClass="control-label" />
+			<p:inputText id="escala" styleClass="form-control"
+				value="#{magnitudController.m.escalaMagnitud}"></p:inputText>
+
+
+
+			<p:commandButton value="Grabar"
+				actionListener="#{magnitudController.insert()}"
+				action="magnitud?faces-redirect=true" update="@form"></p:commandButton>
+
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="master.xhtml">
+	<ui:define name="content">
+		<h2>Lista de Magnitudes</h2>
+		<h:form>
+			<p:dataTable id="lstMagnituds" var="ma"
+				value="#{magnitudController.listaMagnituds}" paginator="true"
+				paginatorPosition="top"
+				emptyMessage="No existen registros" rowIndexVar="item">
+
+				<p:column headerText="Id">
+					<h:outputText value="#{ma.codigoMagnitud}" />
+				</p:column>
+
+				<p:column headerText="Magnitud">
+					<h:outputText value="#{ma.nombreMagnitud}" />
+				</p:column>
+
+
+				<p:column headerText="Escala">
+					<h:outputText value="#{ma.escalaMagnitud}" />
+				</p:column>
+
+
+				<p:column headerText="Operación">
+					<h:commandLink action="lstMagnituds"
+						actionListener="#{magnitudController.delete(ma)}" >
+						Eliminar
+					</h:commandLink>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+	<ui:define name="footerCont">
+	</ui:define>
+</ui:composition>
+</html>

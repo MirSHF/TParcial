@@ -53,14 +53,6 @@ public class UsuarioController {
 		list();
 
 	}
-	
-	public void findByNameUsuario() {
-		try {
-			listaUsuarios = uService.findByNameUsuario(this.getU());
-		} catch (Exception e) {
-			System.out.println("Error al buscar en el usuario de evento");
-		}
-	}
 
 	public Usuario getU() {
 		return u;

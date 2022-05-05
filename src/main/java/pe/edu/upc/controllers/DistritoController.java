@@ -60,14 +60,6 @@ public class DistritoController {
 		dService.delete(dist.getCodigoDistrito());
 		list();
 	}
-	
-	public void findByNameDistrito() {
-		try {
-			listaDistritos = dService.findByNamDistrito(this.getD());
-		} catch (Exception e) {
-			System.out.println("Error al buscar en el controlador de evento");
-		}
-	}
 
 	// getter AND setters
 	public Distrito getD() {

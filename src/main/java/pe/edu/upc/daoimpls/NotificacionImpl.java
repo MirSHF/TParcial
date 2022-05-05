@@ -15,7 +15,7 @@ public class NotificacionImpl implements CNotificacionDao {
 
 	@PersistenceContext(unitName = "majak")
 	private EntityManager em;
-
+	
 	@Transactional
 	@Override
 	public void insert(Notificacion not) {
@@ -24,18 +24,18 @@ public class NotificacionImpl implements CNotificacionDao {
 		} catch (Exception e) {
 			System.out.println("Error al insertar Notificación");
 		}
-
+		
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Notificacion> list() {
 		List<Notificacion> listaNotificacion = new ArrayList<Notificacion>();
-
+		
 		try {
-			Query jpql = em.createQuery("from Notificacion n");
-			listaNotificacion = (List<Notificacion>) jpql.getResultList();
-
+			Query jpql= em.createQuery("from Notificacion n");
+			listaNotificacion = (List<Notificacion>)jpql.getResultList();
+					
 		} catch (Exception e) {
 			System.out.println("Error al listar en el dao Notificacion");
 		}
@@ -47,17 +47,7 @@ public class NotificacionImpl implements CNotificacionDao {
 	public void delete(int id) {
 		Notificacion notif = em.find(Notificacion.class, id);
 		em.remove(notif);
-
-	}
-
-	@Transactional
-	@Override
-	public void update(Notificacion not) {
-		try {
-			em.merge(not);
-		} catch (Exception e) {
-			System.out.println("Error al actualizar en el dao Notificación");
-		}
+		
 	}
 
 }

@@ -9,19 +9,6 @@
 	<ui:define name="content">
 		<h2>Lista de Eventos</h2>
 		<h:form>
-
-			<div class="row">
-				<div class="col-sm-4">
-
-					<h:outputText value="Ingrese nombre del Evento que desea buscar"
-						for="vacuna" styleClass="control-label" />
-					<p:inputText id="vacuna"
-						value="#{eventoController.ev.nombreEvento}"></p:inputText>
-					<p:commandButton value="Buscar"
-						actionListener="#{eventoController.findByNameEvento()}" update="listaEventos"></p:commandButton>
-				</div>
-			</div>
-
 			<p:dataTable id="listaEventos" var="ev"
 				value="#{eventoController.listaEventos}" paginator="true"
 				paginatorPosition="top" emptyMessage="No existen registros"
@@ -58,11 +45,11 @@
 						<f:convertDateTime patter="dd-MM-yyyy" timeZone="UTC" />
 					</h:outputText>
 				</p:column>
-
+				
 				<p:column headerText="Total de Afectados">
 					<h:outputText value="#{ev.cantidadAfectados}" />
 				</p:column>
-
+				
 				<p:column headerText="Operación">
 					<h:commandLink action="listaEventos"
 						actionListener="#{eventoController.delete(ev)}">

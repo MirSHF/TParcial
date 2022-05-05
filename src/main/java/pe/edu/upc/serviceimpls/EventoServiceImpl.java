@@ -32,9 +32,4 @@ public class EventoServiceImpl implements CEventoService{
 		evDao.delete(id);
 	}
 
-	@Override
-	public List<Evento> findByNameEvento(Evento ev) {
-		return evDao.findByNameEvento(ev);
-	}
-
 }

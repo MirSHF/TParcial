@@ -9,5 +9,4 @@ public interface CEventoDao {
 	public void insert(Evento ev);
 	public List<Evento> list();
 	public void delete(int id);
-	public List<Evento> findByNameEvento(Evento ev);
 }

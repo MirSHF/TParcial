@@ -10,6 +10,4 @@ public interface CNotificacionService {
 	public List<Notificacion> list();
 
 	public void delete(int id);
-
-	public void update(Notificacion not);
 }

@@ -25,13 +25,14 @@ public class EventoController {
 
 	@Inject
 	private CEpicentroService eService;
-
+	
 	@Inject
 	private CMagnitudService mService;
 
 	@Inject
 	private CDistritoService dService;
-
+	
+	
 	private Evento ev;
 	private List<Evento> listaEventos;
 	private List<Epicentro> listaEpicentros;
@@ -97,14 +98,6 @@ public class EventoController {
 	public void delete(Evento event) {
 		evService.delete(event.getCodigoEvento());
 		list();
-	}
-
-	public void findByNameEvento() {
-		try {
-			listaEventos = evService.findByNameEvento(this.getEv());
-		} catch (Exception e) {
-			System.out.println("Error al buscar en el controlador de evento");
-		}
 	}
 
 	// Getter and Setters

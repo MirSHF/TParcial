@@ -33,10 +33,4 @@ public class NotificacionServiceImpl implements CNotificacionService {
 
 	}
 
-	@Override
-	public void update(Notificacion not) {
-		// TODO Auto-generated method stub
-		nDao.update(not);
-	}
-
 }

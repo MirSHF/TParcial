@@ -50,19 +50,4 @@ public class EventoImpl implements CEventoDao {
 
 	}
 
-	
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Evento> findByNameEvento(Evento ev) {
-		List<Evento> lista = new ArrayList<Evento>();
-		try {
-			Query q=em.createQuery("from Evento ev where ev.nombreEvento like ?1");
-			q.setParameter(1, "%"+ev.getNombreEvento() +"%");
-			lista=(List<Evento>) q.getResultList();
-		} catch (Exception e) {
-			System.out.println("Error al buscar evento en el DAO");
-		}
-		return lista;
-	}
-
 }

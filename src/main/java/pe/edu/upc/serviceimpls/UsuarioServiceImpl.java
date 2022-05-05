@@ -32,10 +32,4 @@ public class UsuarioServiceImpl implements CUsuarioService {
 		uDao.delete(id);
 	}
 
-	@Override
-	public List<Usuario> findByNameUsuario(Usuario u) {
-
-		return  uDao.findByNameUsuario(u);
-	}
-
 }

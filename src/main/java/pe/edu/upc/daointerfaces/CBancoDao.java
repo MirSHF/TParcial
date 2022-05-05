@@ -12,5 +12,4 @@ public interface CBancoDao {
 
 	public void delete(int id);
 
-	public List<Banco> findByNameBanco(Banco b);
 }

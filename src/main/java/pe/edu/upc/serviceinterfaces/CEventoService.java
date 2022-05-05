@@ -10,6 +10,4 @@ public interface CEventoService {
 	public List<Evento> list();
 
 	public void delete(int id);
-
-	public List<Evento> findByNameEvento(Evento ev);
 }

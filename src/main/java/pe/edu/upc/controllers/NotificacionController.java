@@ -65,19 +65,7 @@ public class NotificacionController {
 		list();
 	}
 	
-	public String updatePre(Notificacion not) {
-		this.setN(not);
-		
-		return "PreUpdatenotificacion.xhtml";
-	}
-	
-	public void update() {
-		try {
-			nService.update(this.n);
-		} catch (Exception e) {
-			System.out.println("Error al modificar en el controlador de vacunas");
-		}
-	}
+
 
 	public Notificacion getN() {
 		return n;

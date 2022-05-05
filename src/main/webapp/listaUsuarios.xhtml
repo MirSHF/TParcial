@@ -9,20 +9,6 @@
 	<ui:define name="content">
 		<h2>Lista de Usuarios</h2>
 		<h:form>
-		
-		<div class="row">
-				<div class="col-sm-4">
-
-					<h:outputText value="Ingrese nombre del Usuario que desea buscar"
-						for="usuario" styleClass="control-label" />
-					<p:inputText id="usuario"
-						value="#{usuarioController.u.nombreUsuario}"></p:inputText>
-					<p:commandButton value="Buscar"
-						actionListener="#{usuarioController.findByNameUsuario()}" update="listaUsuarios"></p:commandButton>
-				</div>
-			</div>
-		
-		
 			<p:dataTable id="listaUsuarios" var="us"
 				value="#{usuarioController.listaUsuarios}" paginator="true"
 				paginatorPosition="top" emptyMessage="No existen registros"

@@ -10,6 +10,4 @@ public interface CDistritoService {
 	public List<Distrito> list();
 
 	public void delete(int id);
-	
-	public List<Distrito> findByNamDistrito(Distrito d);
 }

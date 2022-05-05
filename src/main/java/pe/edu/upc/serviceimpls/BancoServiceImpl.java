@@ -31,10 +31,4 @@ public class BancoServiceImpl implements CBancoService {
 		bdao.delete(id);
 	}
 
-	@Override
-	public List<Banco> findByNameBanco(Banco b) {
-		// TODO Auto-generated method stub
-		return bdao.findByNameBanco(b);
-	}
-
 }

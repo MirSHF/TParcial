@@ -49,18 +49,4 @@ public class UsuarioImpl implements CUsuarioDao {
 		em.remove(usua);
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
-	public List<Usuario> findByNameUsuario(Usuario u) {
-		List<Usuario> lista = new ArrayList<Usuario>();
-		try {
-			Query q=em.createQuery("from Usuario u where u.nombreUsuario like ?1");
-			q.setParameter(1, "%"+u.getNombreUsuario() +"%");
-			lista=(List<Usuario>) q.getResultList();
-		} catch (Exception e) {
-			System.out.println("Error al buscar evento en el DAO");
-		}
-		return lista;
-	}
-
 }

@@ -8,5 +8,4 @@ public interface CUsuarioDao {
 	public void insert(Usuario u);
 	public List<Usuario> list();
 	public void delete(int id);
-	public List<Usuario> findByNameUsuario(Usuario u);
 }

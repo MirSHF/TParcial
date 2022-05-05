@@ -11,20 +11,6 @@
 	<ui:define name="content">
 		<h2>Lista de Distritos</h2>
 		<h:form>
-		
-		<div class="row">
-				<div class="col-sm-4">
-
-					<h:outputText value="Ingrese nombre del Distrito que desea buscar"
-						for="distrito" styleClass="control-label" />
-					<p:inputText id="distrito"
-						value="#{distritoController.d.nombreDistrito}"></p:inputText>
-					<p:commandButton value="Buscar"
-						actionListener="#{distritoController.findByNameDistrito()}" update="lstDistritos"></p:commandButton>
-				</div>
-			</div>
-		
-		
 			<p:dataTable id="lstDistritos" var="di"
 				value="#{distritoController.listaDistritos}" paginator="true"
 				paginatorPosition="top" emptyMessage="No existen registros"

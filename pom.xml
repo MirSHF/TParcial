@@ -47,13 +47,7 @@
 			<artifactId>primefaces</artifactId>
 			<version>11.0.0</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.omnifaces/omnifaces -->
-		<dependency>
-			<groupId>org.omnifaces</groupId>
-			<artifactId>omnifaces</artifactId>
-			<version>3.13</version>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 
 
 

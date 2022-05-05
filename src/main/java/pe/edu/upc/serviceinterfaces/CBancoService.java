@@ -11,6 +11,4 @@ public interface CBancoService {
 	public List<Banco> list();
 
 	public void delete(int id);
-	
-	public List<Banco> findByNameBanco(Banco b);
 }

@@ -9,11 +9,6 @@
 		<class>pe.edu.upc.entities.Usuario</class>
 		<class>pe.edu.upc.entities.Distrito</class>
 		<class>pe.edu.upc.entities.Banco</class>
-		<class>pe.edu.upc.entities.Epicentro</class>
-		<class>pe.edu.upc.entities.Evento</class>
-		<class>pe.edu.upc.entities.Notificacion</class>
-		<class>pe.edu.upc.entities.Tarjeta</class>
-		<class>pe.edu.upc.entities.Renovacion</class>
 		<properties>
 			<property
 				name="javax.persistence.schema-generation.database.action"

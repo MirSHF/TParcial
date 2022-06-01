@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+	<div class="container">
+		<div>
+			<form th:action="@{/bancos/guardar}" th:object="${b}" method="post">
+				<div class="col-sm-12">
+					<label class="form-label">Id: </label> <input type="text"
+						th:field="*{codigoBanco}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Nombre Banco: </label> <input type="text"
+						th:field="*{nombreBanco}" class="form-control"></input>
+				</div>
+				
+						<div class="col-sm-12">
+					<input type="submit" value="Registrar" class="btn btn-dark">
+				</div>
+					
+
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>

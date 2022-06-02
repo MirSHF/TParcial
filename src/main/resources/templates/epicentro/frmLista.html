@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+
+
+
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+				<table class="table table-dark">
+					<thead>
+						<tr>
+							<th>ID Epicentro</th>
+							<th>Latitud</th>
+							<th>Altitud</th>
+							<th>Radio Epicentro</th>
+							<th>Opción 1</th>
+							<th>Opción 2</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="a:${listaEpicentros}">
+							<td th:text="${a.idEpicentro}"></td>
+							<td th:text="${a.latitud}"></td>
+							<td th:text="${a.altitud}"></td>
+							<td th:text="${a.radioEpicentro}"></td>
+
+							<td><a class="btn btn-primary"
+								th:href="@{/epicentros/eliminar?id=}+${a.idEpicentro}">Eliminar</a>
+							</td>
+							
+							<td><a class="btn btn-danger"
+								th:href="@{'/epicentros/irmodificar/'+${a.idEpicentro}}">Actualizar</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

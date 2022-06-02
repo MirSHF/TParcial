@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+
+		<hr style="background-color: #0000FF;" />
+		<div>Lista de Magnitudes</div>
+		<hr style="background-color: #0000FF;" />
+
+		<div>
+			<div class="table-responsive">
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nombre de Magnitud</th>
+							<th>Escala de Magnitud</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="g:${listaMagnitudes}">
+							<td th:text="${g.CodigoMagnitud}"></td>
+							<td th:text="${g.NombreMagnitud}"></td>
+							<td th:text="${g.EscalaMagnitud}"></td>
+							<td><a
+								th:href="@{/magnitudes/eliminar?id=}+${g.CodigoMagnitud}">Eliminar
+							</a></td>
+							<td><a
+								th:href="@{'/magnitudes/irmodificar/'+${g.CodigoMagnitud}}">Actualizar
+							</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

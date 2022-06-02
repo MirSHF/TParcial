@@ -8,11 +8,11 @@
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
-	
-	<hr style="background-color: #0000FF;" /> 
-			<div>Lista de Ciudades</div> 
+
 		<hr style="background-color: #0000FF;" />
-	
+		<div>Lista de Ciudades</div>
+		<hr style="background-color: #0000FF;" />
+
 		<div>
 
 			<div class="table-responsive">
@@ -22,26 +22,20 @@
 
 						<tr>
 
-							<th>ID:</th>
+							<th>DNI:</th>
 							<th>Nombre:</th>
-							<th>Operación:</th>
-							<th>Operación:</th>
+							<th>Email:</th>
+							<th>Ciudad:</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="a:${listaCiudades}">
-							<td th:text="${a.codigoCiudad}"></td>
-							<td th:text="${a.nombreCiudad}"></td>
+						<tr th:each="u:${listaUsuarios}">
 
-							<td>
-							<a th:href="@{/ciudades/eliminar?id=}+${a.codigoCiudad}">Eliminar
-							</a>
-							</td>
-							
-							<td>
-							<a th:href="@{'/ciudades/irmodificar/'+${a.codigoCiudad}}">Actualizar
-							</a>
-							</td>
+							<td th:text="${u.dniUsuario}"></td>
+							<td th:text="${u.nombreUsuario}"></td>
+							<td th:text="${u.correoUsuario}"></td>
+							<td th:text="${u.ciudad.nombreCiudad}"></td>
+
 						</tr>
 
 					</tbody>

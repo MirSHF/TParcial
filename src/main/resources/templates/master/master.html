@@ -19,7 +19,7 @@
 <body>
 
 	<header th:fragment="header">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"><img
 					th:src="@{/imagenes/logo.PNG}" width="70" height="70"></img> </a>
@@ -41,8 +41,8 @@
 								<li><a class="dropdown-item" th:href="@{/distritos/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/distritos/listar}">Listar</a></li>
 							</ul></li>
-							
-								<li class="nav-item dropdown"><a
+
+						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">Ciudad</a>
@@ -51,6 +51,49 @@
 								<li><a class="dropdown-item" th:href="@{/ciudades/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/ciudades/listar}">Listar</a></li>
 							</ul></li>
+
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Magnitud</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/magnitudes/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/magnitudes/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Banco</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/bancos/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/bancos/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Epicentro</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/epicentros/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/epicentros/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/usuarios/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/usuarios/listar}">Listar</a></li>
+							</ul></li>
+
 					</ul>
 				</div>
 			</div>
@@ -59,7 +102,7 @@
 
 	<div class="container py4"></div>
 	<footer th:fragment="footer" class="container">
-	<p>MAJAK</p>
+		<p>MAJAK</p>
 	</footer>
 </body>
 </html>

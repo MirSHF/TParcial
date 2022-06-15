@@ -10,7 +10,7 @@
 	<div class="container">
 
 		<hr style="background-color: #0000FF;" />
-		<div>Lista de Ciudades</div>
+		<div>Lista de Bancos</div>
 		<hr style="background-color: #0000FF;" />
 
 		<div>
@@ -22,19 +22,23 @@
 
 						<tr>
 
-							<th>DNI:</th>
-							<th>Nombre:</th>
-							<th>Email:</th>
-							<th>Ciudad:</th>
+							<th>Numero de tarjeta:</th>
+							<th>Banco:</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="u:${listaUsuarios}">
+						<tr th:each="t:${listaTarjetas}">
 
-							<td th:text="${u.dniUsuario}"></td>
-							<td th:text="${u.nombreUsuario}"></td>
-							<td th:text="${u.correoUsuario}"></td>
-							<td th:text="${u.ciudad.nombreCiudad}"></td>
+							<td th:text="${t.numeroTarjeta}"></td>
+							<td th:text="${t.banco.nombreBanco}"></td>
+							
+							<td><a th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
+							</a></td>
+							
+								<td><a th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
+							</a></td>
 
 						</tr>
 

@@ -10,12 +10,12 @@
 
 	<div class="container">
 		<hr style="background-color: #0000FF;" />
-		<div>Registro de Usuarios</div>
+		<div>Registro de Personas</div>
 		<hr style="background-color: #0000FF;" />
 
 		<div>
 
-			<form th:action="@{/usuarios/guardar}" th:object="${u}" method="post">
+			<form th:action="@{/personas/guardar}" th:object="${p}" method="post">
 
 
 				<div class="col-m-12">
@@ -30,17 +30,17 @@
 
 				<div class="col-m-12">
 					<label class="form-label">DNI:</label> <input type="text"
-						th:field="*{dniUsuario}" class="form-control"></input>
+						th:field="*{dniPersona}" class="form-control"></input>
 				</div>
 
 				<div class="col-m-12">
 					<label class="form-label">Nombre:</label> <input type="text"
-						th:field="*{nombreUsuario}" class="form-control"></input>
+						th:field="*{nombrePersona}" class="form-control"></input>
 				</div>
 
 				<div class="col-m-12">
 					<label class="form-label">Email:</label> <input type="text"
-						th:field="*{correoUsuario}" class="form-control"></input>
+						th:field="*{correoPersona}" class="form-control"></input>
 				</div>
 
 				<div class="col-m-12">

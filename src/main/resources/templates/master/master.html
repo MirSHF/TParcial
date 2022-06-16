@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>MAJAK</title>
+
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
+
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
+
 </head>
 <body>
 
-
 	<header th:fragment="header">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#">MAJAK</a>
+				<a class="navbar-brand" href="#"><img
+					th:src="@{/imagenes/logo.PNG}" width="70" height="70"></img> </a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
 					aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -28,27 +31,100 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
+
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false" style="color:#AAF43A"> Acciones </a>
+							data-bs-toggle="dropdown" aria-expanded="false">Distrito</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/distritos/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/distritos/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Ciudad</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/ciudades/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/ciudades/listar}">Listar</a></li>
+							</ul></li>
+
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Magnitud</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/magnitudes/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/magnitudes/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Banco</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/bancos/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/bancos/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Epicentro</a>
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/epicentros/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item"
 									th:href="@{/epicentros/listar}">Listar</a></li>
 							</ul></li>
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Personas</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/personas/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/personas/listar}">Listar</a></li>
+							</ul></li>
+
+
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Tarjeta</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/tarjetas/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/tarjetas/listar}">Listar</a></li>
+							</ul></li>
+							
+							<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Renovacion Suscripcion</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/renovacionsuscripcions/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/renovacionsuscripcions/listar}">Listar</a></li>
+							</ul></li>
+
 					</ul>
 				</div>
 			</div>
 		</nav>
-
-
 	</header>
+
 	<div class="container py4"></div>
 	<footer th:fragment="footer" class="container">
-		<p>Programación en web 2022</p>
+		<p>MAJAK</p>
 	</footer>
-
 </body>
 </html>

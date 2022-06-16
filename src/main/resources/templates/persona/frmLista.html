@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+
+		<hr style="background-color: #0000FF;" />
+		<div>Lista de Personas</div>
+		<hr style="background-color: #0000FF;" />
+
+		<div>
+
+			<div class="table-responsive">
+				<table class="table table-white">
+
+					<thead>
+
+						<tr>
+
+							<th>DNI:</th>
+							<th>Nombre:</th>
+							<th>Email:</th>
+							<th>Ciudad:</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="u:${listaPersonas}">
+
+							<td th:text="${u.dniPersona}"></td>
+							<td th:text="${u.nombrePersona}"></td>
+							<td th:text="${u.correoPersona}"></td>
+							<td th:text="${u.ciudad.nombreCiudad}"></td>
+							
+							<td><a th:href="@{/personas/eliminar?id=}+${u.codigoPersona}">Eliminar
+							</a></td>
+							
+								<td><a th:href="@{'/personas/irmodificar/'+${u.codigoPersona}}">Actualizar
+							</a></td>
+
+						</tr>
+
+					</tbody>
+
+
+				</table>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

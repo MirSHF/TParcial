@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+
+	<div class="container">
+		<div>
+
+			<form th:action="@{/personas/guardar}" th:object="${pers}"
+				method="post">
+		<div class="col-m-12">
+					<label class="form-label">Ciudad:</label> <select
+						name="selectCiudad" class="form-control"
+						th:field="*{ciudad.codigoCiudad}">
+						<option th:each="ci: ${listaCiudades}"
+							th:value="${ci.codigoCiudad}" th:text="${ci.nombreCiudad}"
+							th:selected="(${ci.codigoCiudad}==*{ciudad.codigoCiudad})"></option>
+					</select>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">DNI:</label> <input type="text"
+						th:field="*{dniPersona}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Nombre:</label> <input type="text"
+						th:field="*{nombrePersona}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Email:</label> <input type="text"
+						th:field="*{correoPersona}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

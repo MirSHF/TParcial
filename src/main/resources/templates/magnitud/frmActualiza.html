@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+
+	<div class="container">
+
+		<div>
+
+			<form th:action="@{/magnitudes/guardar}" th:object="${magn}"
+				method="post">
+				<div class="col-sm-12">
+					<label class="form-label"> Id:</label> <input type="text"
+						th:field="*{CodigoMagnitud}" class="form-control"></input>
+				</div>
+
+
+				<div class="col-sm-12">
+					<label class="form-label"> Nombre:</label> <input
+						type="text" th:field="*{NombreMagnitud}" class="form-control"></input>
+				</div>
+
+
+
+				<div class="col-sm-12">
+					<label class="form-label"> Latitud:</label> <input
+						type="text" th:field="*{EscalaMagnitud}" class="form-control"></input>
+				</div>
+
+			
+
+
+				<div class="col-sm-12">
+					<input type="submit" value="Actualizar" class="btn btn-dark">
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+	<hr style="background-color: #0000FF;" /> 
+			<div>Registro de Distritos</div> 
+		<hr style="background-color: #0000FF;" />
+	
+		<div>
+
+			<form th:action="@{/distritos/guardar}" th:object="${d}"
+				method="post">
+
+				<div class="col-m-12">
+					<label class="form-label">ID:</label> <input type="text"
+						th:field="*{codigoDistrito}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Nombre:</label> <input type="text"
+						th:field="*{nombreDistrito}" class="form-control"></input>
+				</div>
+
+
+				<div class="col-m-12">
+					<input type="submit" value="Registrar" class="btn btn-dark"></input>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

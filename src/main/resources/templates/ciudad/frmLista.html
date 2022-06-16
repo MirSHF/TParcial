@@ -10,7 +10,7 @@
 	<div class="container">
 	
 	<hr style="background-color: #0000FF;" /> 
-			<div>Lista de Epicentros</div> 
+			<div>Lista de Ciudades</div> 
 		<hr style="background-color: #0000FF;" />
 	
 		<div>
@@ -23,28 +23,23 @@
 						<tr>
 
 							<th>ID:</th>
-							<th>Latitud:</th>
-							<th>Altitud:</th>
-							<th>Radio:</th>
+							<th>Nombre:</th>
 							<th>Operación:</th>
 							<th>Operación:</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="a:${listaEpicentros}">
-							<td th:text="${a.idEpicentro}"></td>
-							<td th:text="${a.latitud}"></td>
-							
-							<td th:text="${a.altitud}"></td>
-							<td th:text="${a.radioEpicentro}"></td>
+						<tr th:each="a:${listaCiudades}">
+							<td th:text="${a.codigoCiudad}"></td>
+							<td th:text="${a.nombreCiudad}"></td>
 
 							<td>
-							<a th:href="@{/epicentros/eliminar?id=}+${a.idEpicentro}">Eliminar
+							<a th:href="@{/ciudades/eliminar?id=}+${a.codigoCiudad}">Eliminar
 							</a>
 							</td>
 							
 							<td>
-							<a th:href="@{'/epicentros/irmodificar/'+${a.idEpicentro}}">Actualizar
+							<a th:href="@{'/ciudades/irmodificar/'+${a.codigoCiudad}}">Actualizar
 							</a>
 							</td>
 						</tr>

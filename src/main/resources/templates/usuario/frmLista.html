@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="master/master :: head">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 </head>
 <body>
 
@@ -10,33 +10,40 @@
 	<div class="container">
 
 		<hr style="background-color: #0000FF;" />
-		<div>Lista de Bancos</div>
+		<div>Lista de Ciudades</div>
 		<hr style="background-color: #0000FF;" />
 
 		<div>
+
 			<div class="table-responsive">
 				<table class="table table-white">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>Nombre de Banco</th>
-							<th>Operacion</th>
-							<th>Operacion</th>
 
+					<thead>
+
+						<tr>
+
+							<th>DNI:</th>
+							<th>Nombre:</th>
+							<th>Email:</th>
+							<th>Ciudad:</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="a:${listaBancos}">
-							<td th:text="${a.CodigoBanco}"></td>
-							<td th:text="${a.NombreBanco}"></td>
-							<td><a th:href="@{/bancos/eliminar?id=}+${a.codigoBanco}">Eliminar
-							</a></td>
-							<td><a th:href="@{'/bancos/irmodificar/'+${a.codigoBanco}}">Actualizar
-							</a></td>
+						<tr th:each="u:${listaUsuarios}">
+
+							<td th:text="${u.dniUsuario}"></td>
+							<td th:text="${u.nombreUsuario}"></td>
+							<td th:text="${u.correoUsuario}"></td>
+							<td th:text="${u.ciudad.nombreCiudad}"></td>
+
 						</tr>
+
 					</tbody>
+
+
 				</table>
 			</div>
+
 		</div>
 	</div>
 </body>

@@ -6,6 +6,10 @@
 <body>
 	<header th:replace="master/master :: header"></header>
 	<div class="container">
+	<hr style="background-color: #0000FF;" /> 
+			<div>Registro de Bancos</div> 
+		<hr style="background-color: #0000FF;" />
+	
 		<div>
 			<form th:action="@{/bancos/guardar}" th:object="${b}" method="post">
 				<div class="col-sm-12">

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<hr style="background-color: #0000FF;" />
+		<div>Registro de Eventos</div>
+		<hr style="background-color: #0000FF;" />
+
+		<div>
+
+			<form th:action="@{/eventos/guardar}" th:object="${e}" method="post">
+
+
+				<div class="col-m-12">
+					<label class="form-label">Codigo:</label> <input type="text"
+						th:field="*{codigoEvento}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Nombre Evento:</label> <input type="text"
+						th:field="*{nombreEvento}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Descripcion del Evento:</label> <input type="text"
+						th:field="*{descripcionEvento}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Fecha del evento:</label> <input type="date"
+						th:field="*{fechaEvento}" class="form-control"></input>
+				</div>
+				
+				<div class="col-m-12">
+					<label class="form-label">Cantidad de Afectados:</label> <input type="text"
+						th:field="*{cantidadAfectados}" class="form-control"></input>
+				</div>
+				
+				
+				
+				
+				<div class="col-m-12">
+					<label class="form-label">Magnitud:</label> <select 
+					name = "selectMagnitud"  class="form-control" th:field="*{magnitud.CodigoMagnitud}">				
+					<option th:each="ma:${listaMagnituds}" 
+					th:value="${ma.CodigoMagnitud}" th:text="${ma.NombreMagnitud}"
+					th:selected="(${ma.CodigoMagnitud}==*{magnitud.CodigoMagnitud})">		
+					</select>		
+				</div>
+				
+					<div class="col-m-12">
+					<label class="form-label">Distrito:</label> <select 
+					name = "selectDistrito"  class="form-control" th:field="*{distrito.codigoDistrito}">				
+					<option th:each="di:${listaDistritos}" 
+					th:value="${di.codigoDistrito}" th:text="${di.nombreDistrito}"
+					th:selected="(${di.codigoDistrito}==*{distrito.codigoDistrito})">		
+					</select>		
+				</div>
+				
+				<div class="col-m-12">
+					<label class="form-label">Epicentro:</label> <select 
+					name = "selectEpicentro"  class="form-control" th:field="*{epicentro.idEpicentro}">				
+					<option th:each="ep:${listaEpicentros}" 
+					th:value="${ep.idEpicentro}" th:text="${ep.radioEpicentro}"
+					th:selected="(${ep.idEpicentro}==*{epicentro.idEpicentro})">		
+					</select>		
+				</div>
+				
+
+				<div class="col-m-12">
+					<input type="submit" value="Registrar" class="btn btn-dark"></input>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

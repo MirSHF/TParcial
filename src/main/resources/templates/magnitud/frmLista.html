@@ -10,7 +10,7 @@
 	<div class="container">
 
 		<hr style="background-color: #0000FF;" />
-		<div>Lista de Bancos</div>
+		<div>Lista de Magnitudes</div>
 		<hr style="background-color: #0000FF;" />
 
 		<div>
@@ -19,19 +19,22 @@
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Nombre de Banco</th>
+							<th>Nombre de Magnitud</th>
+							<th>Escala de Magnitud</th>
 							<th>Operacion</th>
 							<th>Operacion</th>
-
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="a:${listaBancos}">
-							<td th:text="${a.CodigoBanco}"></td>
-							<td th:text="${a.NombreBanco}"></td>
-							<td><a th:href="@{/bancos/eliminar?id=}+${a.codigoBanco}">Eliminar
+						<tr th:each="g:${listaMagnitudes}">
+							<td th:text="${g.CodigoMagnitud}"></td>
+							<td th:text="${g.NombreMagnitud}"></td>
+							<td th:text="${g.EscalaMagnitud}"></td>
+							<td><a
+								th:href="@{/magnitudes/eliminar?id=}+${g.CodigoMagnitud}">Eliminar
 							</a></td>
-							<td><a th:href="@{'/bancos/irmodificar/'+${a.codigoBanco}}">Actualizar
+							<td><a
+								th:href="@{'/magnitudes/irmodificar/'+${g.CodigoMagnitud}}">Actualizar
 							</a></td>
 						</tr>
 					</tbody>

@@ -9,20 +9,30 @@
 
 
 	<div class="container">
+
 		<div>
 
-			<form th:action="@{/bancos/guardar}" th:object="${banc}"
+			<form th:action="@{/magnitudes/guardar}" th:object="${magn}"
 				method="post">
 				<div class="col-sm-12">
 					<label class="form-label"> Id:</label> <input type="text"
-						th:field="*{codigoBanco}" class="form-control"></input>
+						th:field="*{CodigoMagnitud}" class="form-control"></input>
 				</div>
 
 
 				<div class="col-sm-12">
-					<label class="form-label"> Nombre de Banco:</label> <input
-						type="text" th:field="*{nombreBanco}" class="form-control"></input>
+					<label class="form-label"> Nombre:</label> <input
+						type="text" th:field="*{NombreMagnitud}" class="form-control"></input>
 				</div>
+
+
+
+				<div class="col-sm-12">
+					<label class="form-label"> Latitud:</label> <input
+						type="text" th:field="*{EscalaMagnitud}" class="form-control"></input>
+				</div>
+
+			
 
 
 				<div class="col-sm-12">

@@ -22,18 +22,21 @@
 					<label class="form-label">Banco:</label> <select
 						name="selectTarjeta" class="form-control"
 						th:field="*{banco.codigoBanco}">
-						<option th:each="ba: ${listaBancos}"
-							th:value="${ba.codigoBanco}" th:text="${ba.nombreBanco}"
+						<option th:each="ba: ${listaBancos}" th:value="${ba.codigoBanco}"
+							th:text="${ba.nombreBanco}"
 							th:selected="(${ba.codigoBanco}==*{banco.codigoBanco})"></option>
 					</select>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Numero de tarjeta:</label> <input type="text"
-						th:field="*{numeroTarjeta}" class="form-control"></input>
-				</div>
 
-				
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Numero
+					de tarjeta</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{numeroTarjeta}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('numeroTarjeta')}"
+						th:errors="*{numeroTarjeta}"></small>
+				</div>
 
 			
 

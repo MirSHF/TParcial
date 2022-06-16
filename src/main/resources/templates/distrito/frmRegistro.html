@@ -9,10 +9,10 @@
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
-	<hr style="background-color: #0000FF;" /> 
-			<div>Registro de Distritos</div> 
 		<hr style="background-color: #0000FF;" />
-	
+		<div>Registro de Distritos</div>
+		<hr style="background-color: #0000FF;" />
+
 		<div>
 
 			<form th:action="@{/distritos/guardar}" th:object="${d}"
@@ -23,10 +23,18 @@
 						th:field="*{codigoDistrito}" class="form-control"></input>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Nombre:</label> <input type="text"
-						th:field="*{nombreDistrito}" class="form-control"></input>
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Nombre
+					de distrito</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{nombreDistrito}"
+						class="form-control" /> <small
+						th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('nombreDistrito')}"
+						th:errors="*{nombreDistrito}"></small>
 				</div>
+
 
 
 				<div class="col-m-12">

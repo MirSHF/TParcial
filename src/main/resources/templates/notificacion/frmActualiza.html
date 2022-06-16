@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<hr style="background-color: #0000FF;" />
+		<div>Registro de Notificaciones</div>
+		<hr style="background-color: #0000FF;" />
+
+		<div>
+
+			<form th:action="@{/notificaciones/guardar}" th:object="${noti}" method="post">
+
+
+				<div class="col-m-12">
+					<label class="form-label">Evento:</label> <select
+						name="selectEvento" class="form-control"
+						th:field="*{evento.codigoEvento}">
+						<option th:each="ev: ${listaEventos}"
+							th:value="${ev.codigoEvento}" th:text="${ev.nombreEvento}"
+							th:selected="(${ev.codigoEvento}==*{evento.codigoEvento})"></option>
+					</select>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Descripción de la notificación:</label> <input type="text"
+						th:field="*{descripcionNotificacion}" class="form-control"></input>
+				</div>
+
+				
+
+			
+
+				<div class="col-m-12">
+					<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

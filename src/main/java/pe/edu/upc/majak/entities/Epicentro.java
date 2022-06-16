@@ -7,16 +7,28 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import javax.validation.constraints.NotEmpty;
+
 @Entity
 @Table(name = "Epicentro")
 public class Epicentro {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idEpicentro;
+	
+	
+	
+	@NotEmpty(message = "Ingrese latitud")
 	@Column(name = "latitud", nullable = false, length = 44)
 	private String latitud;
+	
+	
+	@NotEmpty(message = "Ingrese Altitud")
 	@Column(name = "altitud", nullable = false, length = 44)
 	private String altitud;
+	
+	
+	@NotEmpty(message = "Ingrese Radio")
 	@Column(name = "radioEpicentro", nullable = false, length = 8)
 	private String radioEpicentro;
 

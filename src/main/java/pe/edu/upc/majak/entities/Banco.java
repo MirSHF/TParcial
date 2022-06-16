@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table (name = "Banco")
@@ -16,6 +17,7 @@ public class Banco {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int codigoBanco;
     
+	@NotEmpty(message = "Ingresa el nombre")
     @Column(name = "nombreBanco", nullable = false, length = 20)
 	private String nombreBanco;
 	public Banco() {

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,7 +34,7 @@ public class CiudadController {
 	}
 
 	@PostMapping("/guardar")
-	public String saveCiudad(@Valid Ciudad ciu, BindingResult binRes, Model model) {
+	public String saveCiudad(@Valid @ModelAttribute("c") Ciudad ciu, BindingResult binRes, Model model) {
 
 		if (binRes.hasErrors()) {
 			return "ciudad/frmRegistro";

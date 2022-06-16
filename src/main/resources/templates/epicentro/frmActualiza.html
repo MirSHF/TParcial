@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<div>
+
+			<form th:action="@{/epicentros/guardar}" th:object="${epic}"
+				method="post">
+
+				<div class="col-m-12">
+					<label class="form-label">ID:</label> <input type="text"
+						th:field="*{idEpicentro}" class="form-control"></input>
+				</div>
+
+				<div class="col-m-12">
+					<label class="form-label">Altitud:</label> <input type="text"
+						th:field="*{latitud}" class="form-control"></input>
+				</div>
+				<div class="col-m-12">
+					<label class="form-label">Latitud:</label> <input type="text"
+						th:field="*{altitud}" class="form-control"></input>
+				</div>
+				<div class="col-m-12">
+					<label class="form-label">RAdio:</label> <input type="text"
+						th:field="*{radioEpicentro}" class="form-control"></input>
+				</div>
+
+
+				<div class="col-m-12">
+					<input type="submit" value="Registrar" class="btn btn-dark"></input>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

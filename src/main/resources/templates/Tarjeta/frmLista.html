@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="master/master :: head">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 </head>
 <body>
 
@@ -10,36 +10,44 @@
 	<div class="container">
 
 		<hr style="background-color: #0000FF;" />
-		<div>Lista de Magnitudes</div>
+		<div>Lista de Bancos</div>
 		<hr style="background-color: #0000FF;" />
 
 		<div>
+
 			<div class="table-responsive">
 				<table class="table table-white">
+
 					<thead>
+
 						<tr>
-							<th>Id</th>
-							<th>Nombre de Magnitud</th>
-							<th>Escala de Magnitud</th>
+
+							<th>Numero de tarjeta:</th>
+							<th>Banco:</th>
 							<th>Operacion</th>
 							<th>Operacion</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="g:${listaMagnitudes}">
-							<td th:text="${g.CodigoMagnitud}"></td>
-							<td th:text="${g.NombreMagnitud}"></td>
-							<td th:text="${g.EscalaMagnitud}"></td>
-							<td><a
-								th:href="@{/magnitudes/eliminar?id=}+${g.CodigoMagnitud}">Eliminar
+						<tr th:each="t:${listaTarjetas}">
+
+							<td th:text="${t.numeroTarjeta}"></td>
+							<td th:text="${t.banco.nombreBanco}"></td>
+							
+							<td><a th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
 							</a></td>
-							<td><a
-								th:href="@{'/magnitudes/irmodificar/'+${g.CodigoMagnitud}}">Actualizar
+							
+								<td><a th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
 							</a></td>
+
 						</tr>
+
 					</tbody>
+
+
 				</table>
 			</div>
+
 		</div>
 	</div>
 </body>

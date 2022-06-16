@@ -39,10 +39,17 @@
 							<td th:text="${u.correoPersona}"></td>
 							<td th:text="${u.ciudad.nombreCiudad}"></td>
 							
+<<<<<<< Updated upstream:src/main/resources/templates/persona/frmLista.html
 							<td><a th:href="@{/personas/eliminar?id=}+${u.codigoPersona}">Eliminar
 							</a></td>
 							
 								<td><a th:href="@{'/personas/irmodificar/'+${u.codigoPersona}}">Actualizar
+=======
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/personas/eliminar?id=}+${u.codigoPersona}">Eliminar
+							</a></td>
+							
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/personas/irmodificar/'+${u.codigoPersona}}">Actualizar
+>>>>>>> Stashed changes:src/main/resources/templates/usuario/frmLista.html
 							</a></td>
 
 						</tr>

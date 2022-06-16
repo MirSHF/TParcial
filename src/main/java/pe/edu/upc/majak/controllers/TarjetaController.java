@@ -10,6 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< Updated upstream
+=======
+import org.springframework.web.bind.annotation.ModelAttribute;
+>>>>>>> Stashed changes
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +41,11 @@ public class TarjetaController {
 	}
 
 	@PostMapping("/guardar")
+<<<<<<< Updated upstream
 	public String saveTarjeta(@Valid Tarjeta objTarj, BindingResult binRes) {
+=======
+	public String saveTarjeta(@Valid @ModelAttribute("t") Tarjeta objTarj, BindingResult binRes) {
+>>>>>>> Stashed changes
 		if (binRes.hasErrors()) {
 			return "/tarjeta/frmRegistro";
 		} else {
@@ -45,18 +53,30 @@ public class TarjetaController {
 			return "redirect:/tarjetas/nuevo";
 		}
 	}
+<<<<<<< Updated upstream
 	
+=======
+
+>>>>>>> Stashed changes
 	@GetMapping("/listar")
 	public String listTarjetas(Model model) {
 		try {
 			model.addAttribute("listaTarjetas", tService.list());
+<<<<<<< Updated upstream
 		}catch (Exception e) {
+=======
+		} catch (Exception e) {
+>>>>>>> Stashed changes
 			// TODO: handle exception
 			model.addAttribute("error", e.getMessage());
 		}
 		return "/tarjeta/frmLista";
 	}
+<<<<<<< Updated upstream
 	
+=======
+
+>>>>>>> Stashed changes
 	@RequestMapping("/eliminar")
 	public String deleteTarjeta(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
 		try {
@@ -80,4 +100,13 @@ public class TarjetaController {
 		return "tarjeta/frmActualiza";
 	}
 	
+<<<<<<< Updated upstream
+=======
+	@PostMapping("/update")
+    public String updateSuscripcion(Tarjeta t) {
+       tService.update(t);
+        return "redirect:/tarjetas/listar";
+    }
+
+>>>>>>> Stashed changes
 }

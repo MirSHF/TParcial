@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<<<<<<< Updated upstream
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+=======
 
 <head th:replace="master/master :: head">
 <meta charset="UTF-8">
+>>>>>>> Stashed changes
 </head>
 <body>
 
 	<header th:replace="master/master :: header"></header>
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:src/main/resources/templates/persona/frmRegistro.html
+=======
+>>>>>>> Stashed changes
 	<div class="container">
 		<hr style="background-color: #0000FF;" />
 		<div>Registro de Personas</div>
 		<hr style="background-color: #0000FF;" />
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes:src/main/resources/templates/persona/frmActualiza.html
 
+	<div class="container">
 		<div>
 
+<<<<<<< Updated upstream:src/main/resources/templates/persona/frmRegistro.html
 			<form th:action="@{/personas/guardar}" th:object="${p}" method="post">
 
 
+=======
+			<form th:action="@{/personas/update}" th:object="${pers}"
+				method="post">
+>>>>>>> Stashed changes:src/main/resources/templates/persona/frmActualiza.html
+=======
+
+		<div>
+
+			<form th:action="@{/personas/guardar}" th:object="${p}" method="post" >
+
+
+>>>>>>> Stashed changes
 				<div class="col-m-12">
 					<label class="form-label">Ciudad:</label> <select
 						name="selectCiudad" class="form-control"
@@ -26,6 +52,12 @@
 							th:value="${ci.codigoCiudad}" th:text="${ci.nombreCiudad}"
 							th:selected="(${ci.codigoCiudad}==*{ciudad.codigoCiudad})"></option>
 					</select>
+				</div>
+
+<<<<<<< Updated upstream
+				<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoPersona}" class="form-control"></input>
 				</div>
 
 				<div class="col-m-12">
@@ -44,11 +76,47 @@
 				</div>
 
 				<div class="col-m-12">
+					<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+				</div>
+			</form>
+=======
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">DNI</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{dniPersona}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('dniPersona')}"
+						th:errors="*{dniPersona}"></small>
+				</div>
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Nombre</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{nombrePersona}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('nombrePersona')}"
+						th:errors="*{nombrePersona}"></small>
+				</div>
+
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Email</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{correoPersona}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('correoPersona')}"
+						th:errors="*{correoPersona}"></small>
+				</div>
+
+
+
+				<div class="col-m-12">
 					<input type="submit" value="Registrar" class="btn btn-dark"></input>
 				</div>
 
 			</form>
 
+>>>>>>> Stashed changes
 		</div>
 	</div>
 </body>

@@ -10,6 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< Updated upstream
+=======
+import org.springframework.web.bind.annotation.ModelAttribute;
+>>>>>>> Stashed changes
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,7 +51,11 @@ public class RenovacionSuscripcionController {
 	}
 
 	@PostMapping("/guardar")
+<<<<<<< Updated upstream
 	public String saveRenovacionSuscripcion(@Valid RenovacionSuscripcion objRenov, BindingResult binRes) {
+=======
+	public String saveRenovacionSuscripcion(@Valid @ModelAttribute("r") RenovacionSuscripcion objRenov, BindingResult binRes) {
+>>>>>>> Stashed changes
 		if (binRes.hasErrors()) {
 			return "/renovacionsuscripcion/frmRegistro";
 		} else {
@@ -90,4 +98,13 @@ public class RenovacionSuscripcionController {
 		model.addAttribute("listaTarjetas", tService.list());
 		return "renovacionsuscripcion/frmActualiza";
 	}
+<<<<<<< Updated upstream
+=======
+	
+	@PostMapping("/update")
+    public String updateSuscripcion(RenovacionSuscripcion r) {
+		rService.update(r);
+        return "redirect:/tarjetas/listar";
+    }
+>>>>>>> Stashed changes
 }

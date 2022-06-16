@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,10 +35,10 @@ public class BancoController {
 	
 
 	@PostMapping("/guardar")
-	public String saveCiudad(@Valid Banco ban, BindingResult binRes, Model model) {
+	public String saveCiudad(@Valid @ModelAttribute("b") Banco ban, BindingResult binRes, Model model) {
 
 		if (binRes.hasErrors()) {
-			return "ciudad/frmRegistro";
+			return "banco/frmRegistro";
 		} else {
 			banService.insert(ban);
 			model.addAttribute("mensaje", "Se registro correctamente");
@@ -77,5 +78,11 @@ public class BancoController {
 		model.addAttribute("banc", objBan.get());
 		return "banco/frmActualiza";
 	}
+	@PostMapping("/update")
+    public String updateSuscripcion(Banco b) {
+       banService.update(b);
+        return "redirect:/tarjetas/listar";
+    }
+
 	
 }

@@ -40,4 +40,13 @@ public class PersonaServiceImpl implements IPersonaService{
 		return pRepository.findById(codigoPersona);
 	}
 
+<<<<<<< Updated upstream
+=======
+	@Override
+	public void update(Persona pers) {
+		// TODO Auto-generated method stub
+		pRepository.save(pers);
+	}
+
+>>>>>>> Stashed changes
 }

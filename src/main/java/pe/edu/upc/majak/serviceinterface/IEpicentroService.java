@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import pe.edu.upc.majak.entities.Epicentro;
 
+
 public interface IEpicentroService {
 
 	public void insert(Epicentro epicentro);
@@ -15,4 +16,5 @@ public interface IEpicentroService {
 	public void delete(int idEpicentro);
 
 	Optional<Epicentro> listId(int idEpicentro);
+	public void  update(Epicentro epic);
 }

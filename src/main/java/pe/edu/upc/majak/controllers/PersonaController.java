@@ -10,6 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< Updated upstream
+=======
+import org.springframework.web.bind.annotation.ModelAttribute;
+>>>>>>> Stashed changes
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +40,11 @@ public class PersonaController {
 	}
 
 	@PostMapping("/guardar")
+<<<<<<< Updated upstream
 	public String saveUsuario(@Valid Persona objPers, BindingResult binRes) {
+=======
+	public String saveUsuario(@Valid @ModelAttribute("p") Persona objPers, BindingResult binRes) {
+>>>>>>> Stashed changes
 		if (binRes.hasErrors()) {
 			return "/persona/frmRegistro";
 		} else {
@@ -78,4 +86,12 @@ public class PersonaController {
 		model.addAttribute("listaCiudades", cService.list());
 		return "persona/frmActualiza";
 	}
+<<<<<<< Updated upstream
+=======
+	@PostMapping("/update")
+    public String updateSuscripcion(Persona p) {
+		pService.update(p);
+        return "redirect:/tarjetas/listar";
+    }
+>>>>>>> Stashed changes
 }

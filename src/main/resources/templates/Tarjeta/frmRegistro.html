@@ -9,7 +9,11 @@
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
+<<<<<<< Updated upstream
 		<hr style="background-color: #0000FF;" />
+=======
+		<hr style="background-color: #0000FF;" />	
+>>>>>>> Stashed changes
 		<div>Registro de Tarjetas</div>
 		<hr style="background-color: #0000FF;" />
 
@@ -22,18 +26,37 @@
 					<label class="form-label">Banco:</label> <select
 						name="selectTarjeta" class="form-control"
 						th:field="*{banco.codigoBanco}">
+<<<<<<< Updated upstream
 						<option th:each="ba: ${listaBancos}"
 							th:value="${ba.codigoBanco}" th:text="${ba.nombreBanco}"
+=======
+						<option th:each="ba: ${listaBancos}" th:value="${ba.codigoBanco}"
+							th:text="${ba.nombreBanco}"
+>>>>>>> Stashed changes
 							th:selected="(${ba.codigoBanco}==*{banco.codigoBanco})"></option>
 					</select>
 				</div>
 
+<<<<<<< Updated upstream
 				<div class="col-m-12">
 					<label class="form-label">Numero de tarjeta:</label> <input type="text"
 						th:field="*{numeroTarjeta}" class="form-control"></input>
 				</div>
 
 				
+=======
+
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Numero
+					de tarjeta</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{numeroTarjeta}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('numeroTarjeta')}"
+						th:errors="*{numeroTarjeta}"></small>
+				</div>
+>>>>>>> Stashed changes
 
 			
 

@@ -22,16 +22,27 @@
 				</div>
 
 
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Nombre
+					de Magnitud</label>
 				<div class="col-sm-12">
-					<label class="form-label"> Nombre de Magnitud:</label> <input
-						type="text" th:field="*{NombreMagnitud}" class="form-control"></input>
+					<input type="text" th:field="*{NombreMagnitud}"
+						class="form-control" /> <small
+						th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('NombreMagnitud')}"
+						th:errors="*{NombreMagnitud}"></small>
 				</div>
 
 
 
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Escala
+					de Magnitud</label>
 				<div class="col-sm-12">
-					<label class="form-label"> Escala de Magnitud:</label> <input
-						type="text" th:field="*{EscalaMagnitud}" class="form-control"></input>
+					<input type="text" th:field="*{EscalaMagnitud}"
+						class="form-control" /> <small
+						th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('EscalaMagnitud')}"
+						th:errors="*{EscalaMagnitud}"></small>
 				</div>
 
 

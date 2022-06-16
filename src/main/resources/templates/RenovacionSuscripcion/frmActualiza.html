@@ -15,8 +15,13 @@
 
 		<div>
 
+<<<<<<< Updated upstream
 			<form th:action="@{/renovacionsuscripcions/guardar}" th:object="${susc}"
 				method="post">
+=======
+			<form th:action="@{/renovacionsuscripcions/guardar}"
+				th:object="${susc}" method="post">
+>>>>>>> Stashed changes
 
 
 				<div class="col-m-12">
@@ -29,6 +34,14 @@
 					</select>
 				</div>
 
+<<<<<<< Updated upstream
+=======
+				<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoSuscripcion}" class="form-control"></input>
+				</div>
+
+>>>>>>> Stashed changes
 				<div class="col-sm-12">
 					<label class="form-label"> Fecha de Renovacion:</label> <input
 						type="date" th:field="*{fechaRenovacion}" class="form-control"></input>
@@ -49,7 +62,11 @@
 
 
 				<div class="col-m-12">
+<<<<<<< Updated upstream
 					<input type="submit" value="Registrar" class="btn btn-dark"></input>
+=======
+					<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+>>>>>>> Stashed changes
 				</div>
 
 			</form>

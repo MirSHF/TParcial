@@ -34,10 +34,17 @@
 							<td th:text="${t.numeroTarjeta}"></td>
 							<td th:text="${t.banco.nombreBanco}"></td>
 							
+<<<<<<< Updated upstream
 							<td><a th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
 							</a></td>
 							
 								<td><a th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
+=======
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
+							</a></td>
+							
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
+>>>>>>> Stashed changes
 							</a></td>
 
 						</tr>

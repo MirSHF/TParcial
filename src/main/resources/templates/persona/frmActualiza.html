@@ -7,13 +7,35 @@
 
 	<header th:replace="master/master :: header"></header>
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream:src/main/resources/templates/persona/frmRegistro.html
+	<div class="container">
+		<hr style="background-color: #0000FF;" />
+		<div>Registro de Personas</div>
+		<hr style="background-color: #0000FF;" />
+=======
+>>>>>>> Stashed changes:src/main/resources/templates/persona/frmActualiza.html
+>>>>>>> Stashed changes
 
 	<div class="container">
 		<div>
 
+<<<<<<< Updated upstream
 			<form th:action="@{/personas/guardar}" th:object="${pers}"
 				method="post">
 		<div class="col-m-12">
+=======
+<<<<<<< Updated upstream:src/main/resources/templates/persona/frmRegistro.html
+			<form th:action="@{/personas/guardar}" th:object="${p}" method="post">
+
+
+=======
+			<form th:action="@{/personas/update}" th:object="${pers}"
+				method="post">
+>>>>>>> Stashed changes:src/main/resources/templates/persona/frmActualiza.html
+				<div class="col-m-12">
+>>>>>>> Stashed changes
 					<label class="form-label">Ciudad:</label> <select
 						name="selectCiudad" class="form-control"
 						th:field="*{ciudad.codigoCiudad}">
@@ -23,6 +45,14 @@
 					</select>
 				</div>
 
+<<<<<<< Updated upstream
+=======
+				<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoPersona}" class="form-control"></input>
+				</div>
+
+>>>>>>> Stashed changes
 				<div class="col-m-12">
 					<label class="form-label">DNI:</label> <input type="text"
 						th:field="*{dniPersona}" class="form-control"></input>

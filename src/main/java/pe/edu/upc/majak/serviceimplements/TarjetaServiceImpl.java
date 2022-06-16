@@ -10,10 +10,6 @@ import pe.edu.upc.majak.entities.Tarjeta;
 import pe.edu.upc.majak.repositories.ITarjetaRespository;
 import pe.edu.upc.majak.serviceinterface.ITarjetaService;
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 @Service
 public class TarjetaServiceImpl implements ITarjetaService{
 
@@ -45,13 +41,4 @@ public class TarjetaServiceImpl implements ITarjetaService{
 		return tRepository.findById(codigoTarjeta);
 	}
 
-<<<<<<< Updated upstream
-=======
-	@Override
-	public void update(Tarjeta tar) {
-		// TODO Auto-generated method stub
-		tRepository.save(tar);
-	}
-
->>>>>>> Stashed changes
 }

@@ -14,5 +14,4 @@ public interface ICiudadService {
 	public void delete(int codigoCiudad);
 
 	Optional<Ciudad> listId(int codigoCiudad);
-	public void  update(Ciudad ciud);
 }

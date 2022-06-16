@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import pe.edu.upc.majak.entities.Magnitud;
 
-
 public interface IMagnitudService {
 
 	public void insert(Magnitud magnitud);
@@ -15,5 +14,4 @@ public interface IMagnitudService {
 	public void delete(int CodigoMagnitud);
 	
 	Optional<Magnitud> listId(int CodigoMagnitud);
-	public void  update(Magnitud magn);
 }

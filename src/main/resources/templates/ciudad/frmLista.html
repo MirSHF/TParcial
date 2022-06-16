@@ -34,12 +34,12 @@
 							<td th:text="${a.nombreCiudad}"></td>
 
 							<td>
-							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/ciudades/eliminar?id=}+${a.codigoCiudad}">Eliminar
+							<a th:href="@{/ciudades/eliminar?id=}+${a.codigoCiudad}">Eliminar
 							</a>
 							</td>
 							
 							<td>
-							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/ciudades/irmodificar/'+${a.codigoCiudad}}">Actualizar
+							<a th:href="@{'/ciudades/irmodificar/'+${a.codigoCiudad}}">Actualizar
 							</a>
 							</td>
 						</tr>

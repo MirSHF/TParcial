@@ -14,9 +14,4 @@ public interface ITarjetaService {
 	public void delete(int codigoTarjeta);
 
 	Optional<Tarjeta> listId(int codigoTarjeta);
-<<<<<<< Updated upstream
-=======
-	
-	public void  update(Tarjeta tar);
->>>>>>> Stashed changes
 }

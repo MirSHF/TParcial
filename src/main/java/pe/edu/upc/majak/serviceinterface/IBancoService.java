@@ -14,5 +14,4 @@ public interface IBancoService {
 	public void delete(int codigoBanco);
 
 	Optional<Banco> listId(int codigoBanco);
-	public void  update(Banco banc);
 }

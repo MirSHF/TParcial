@@ -29,9 +29,9 @@
 						<tr th:each="a:${listaBancos}">
 							<td th:text="${a.CodigoBanco}"></td>
 							<td th:text="${a.NombreBanco}"></td>
-							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/bancos/eliminar?id=}+${a.codigoBanco}">Eliminar
+							<td><a th:href="@{/bancos/eliminar?id=}+${a.codigoBanco}">Eliminar
 							</a></td>
-							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/bancos/irmodificar/'+${a.codigoBanco}}">Actualizar
+							<td><a th:href="@{'/bancos/irmodificar/'+${a.codigoBanco}}">Actualizar
 							</a></td>
 						</tr>
 					</tbody>

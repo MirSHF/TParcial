@@ -76,9 +76,4 @@ public class MagnitudController {
 		model.addAttribute("magn", objMag.get());
 		return "magnitud/frmActualiza";
 	}
-	@PostMapping("/update")
-    public String updateSuscripcion(Magnitud m) {
-		mService.update(m);
-        return "redirect:/tarjetas/listar";
-    }
 }

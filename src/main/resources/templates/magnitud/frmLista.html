@@ -31,10 +31,10 @@
 							<td th:text="${g.NombreMagnitud}"></td>
 							<td th:text="${g.EscalaMagnitud}"></td>
 							<td><a
-							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{/magnitudes/eliminar?id=}+${g.CodigoMagnitud}">Eliminar
+								th:href="@{/magnitudes/eliminar?id=}+${g.CodigoMagnitud}">Eliminar
 							</a></td>
 							<td><a
-							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{'/magnitudes/irmodificar/'+${g.CodigoMagnitud}}">Actualizar
+								th:href="@{'/magnitudes/irmodificar/'+${g.CodigoMagnitud}}">Actualizar
 							</a></td>
 						</tr>
 					</tbody>

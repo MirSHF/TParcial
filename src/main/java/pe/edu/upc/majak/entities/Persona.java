@@ -8,11 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-<<<<<<< Updated upstream
-=======
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
->>>>>>> Stashed changes
 
 @Entity
 @Table(name = "Persona")
@@ -22,14 +19,6 @@ public class Persona {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int codigoPersona;
 
-<<<<<<< Updated upstream
-	@Column(name = "dniPersona", length = 15, nullable = false)
-	private String dniPersona;
-
-	@Column(name = "nombrePersona", length = 25, nullable = false)
-	private String nombrePersona;
-
-=======
 	@Size(min = 8, max = 8)
 	@NotEmpty(message = "Ingresa DNI")
 	@Column(name = "dniPersona", length = 15, nullable = false)
@@ -40,7 +29,6 @@ public class Persona {
 	private String nombrePersona;
 
 	@NotEmpty(message = "Ingresa Correo")
->>>>>>> Stashed changes
 	@Column(name = "correoPersona", length = 25, nullable = false)
 	private String correoPersona;
 
@@ -102,8 +90,4 @@ public class Persona {
 		this.ciudad = ciudad;
 	}
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 }

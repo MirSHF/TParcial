@@ -40,10 +40,4 @@ public class NotificacionServiceImlpl implements INotificacionService{
 		return nRepository.findById(codigoNotificacion);
 	}
 
-	@Override
-	public void update(Notificacion not) {
-		// TODO Auto-generated method stub
-		nRepository.save(not);
-	}
-
 }

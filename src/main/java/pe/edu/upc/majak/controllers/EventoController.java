@@ -92,10 +92,4 @@ public class EventoController {
 		model.addAttribute("listaDistritos", disService.list());
 		return "evento/frmActualiza";
 	}
-	
-	@PostMapping("/update")
-    public String updateSuscripcion(Evento e) {
-		evService.update(e);
-        return "redirect:/tarjetas/listar";
-    }
 }

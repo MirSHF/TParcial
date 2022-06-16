@@ -8,14 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-<<<<<<< Updated upstream
-=======
 //import javax.validation.constraints.Digits;
 //import javax.validation.constraints.Max;
 //import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
->>>>>>> Stashed changes
 
 @Entity
 @Table(name = "Tarjeta")
@@ -24,11 +21,6 @@ public class Tarjeta {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int codigoTarjeta;
 	
-<<<<<<< Updated upstream
-	@Column(name = "numeroTarjeta", length = 16, nullable = false)
-	private String numeroTarjeta;
-	
-=======
 	//@Digits(integer = 8, fraction = 0)
 	
 	//@Min(8) 
@@ -40,7 +32,6 @@ public class Tarjeta {
 	private String numeroTarjeta;
 	
 	
->>>>>>> Stashed changes
 	@ManyToOne
 	@JoinColumn(name="codigoBanco")
 	private Banco banco;

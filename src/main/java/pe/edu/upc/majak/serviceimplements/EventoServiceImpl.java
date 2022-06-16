@@ -40,10 +40,4 @@ public class EventoServiceImpl implements IEventoService{
 		return eventoRepository.findById(codigoEvento);
 	}
 
-	@Override
-	public void update(Evento even) {
-		// TODO Auto-generated method stub
-		eventoRepository.save(even);
-	}
-
 }

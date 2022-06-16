@@ -15,40 +15,32 @@
 
 		<div>
 
-			<form th:action="@{/personaeventos/update}" th:object="${perev}"
-				method="post">
+			<form th:action="@{/personaeventos/guardar}" th:object="${perev}" method="post">
 
 
 				<div class="col-m-12">
-					<label class="form-label">Persona:</label> <select
-						name="selectPersona" class="form-control"
-						th:field="*{persona.codigoPersona}">
-						<option th:each="pe:${listaPersonas}"
-							th:value="${pe.codigoPersona}" th:text="${pe.nombrePersona}"
-							th:selected="(${pe.codigoPersona}==*{persona.codigoPersona})">
-					</select>
+					<label class="form-label">Persona:</label> <select 
+					name = "selectPersona"  class="form-control" th:field="*{persona.codigoPersona}">				
+					<option th:each="pe:${listaPersonas}" 
+					th:value="${pe.codigoPersona}" th:text="${pe.nombrePersona}"
+					th:selected="(${pe.codigoPersona}==*{persona.codigoPersona})">		
+					</select>		
 				</div>
-				<div class="col-sm-3">
-					<label class="form-label">Id:</label> <input type="text"
-						th:field="*{codigoPersonaEvento}" class="form-control"></input>
+				
+					<div class="col-m-12">
+					<label class="form-label">Evento:</label> <select 
+					name = "selectEvento"  class="form-control" th:field="*{evento.codigoEvento}">				
+					<option th:each="ev:${listaEventos}" 
+					th:value="${ev.codigoEvento}" th:text="${ev.nombreEvento}"
+					th:selected="(${ev.codigoEvento}==*{evento.codigoEvento})">		
+					</select>		
 				</div>
-
-
-				<div class="col-m-12">
-					<label class="form-label">Evento:</label> <select
-						name="selectEvento" class="form-control"
-						th:field="*{evento.codigoEvento}">
-						<option th:each="ev:${listaEventos}" th:value="${ev.codigoEvento}"
-							th:text="${ev.nombreEvento}"
-							th:selected="(${ev.codigoEvento}==*{evento.codigoEvento})">
-					</select>
-				</div>
-
-				<div class="col-m-12">
+				
+						<div class="col-m-12">
 					<label class="form-label">Fecha:</label> <input type="date"
 						th:field="*{fechaPersonaEvento}" class="form-control"></input>
 				</div>
-
+				
 
 				<div class="col-m-12">
 					<input type="submit" value="Actualizar" class="btn btn-dark"></input>

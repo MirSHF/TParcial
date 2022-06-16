@@ -78,11 +78,5 @@ public class BancoController {
 		model.addAttribute("banc", objBan.get());
 		return "banco/frmActualiza";
 	}
-	@PostMapping("/update")
-    public String updateSuscripcion(Banco b) {
-       banService.update(b);
-        return "redirect:/tarjetas/listar";
-    }
-
 	
 }

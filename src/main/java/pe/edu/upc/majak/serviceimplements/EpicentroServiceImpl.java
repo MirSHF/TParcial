@@ -40,10 +40,4 @@ public class EpicentroServiceImpl implements IEpicentroService{
 		return epicentroRepository.findById(idEpicentro);
 	}
 
-	@Override
-	public void update(Epicentro epic) {
-		// TODO Auto-generated method stub
-		epicentroRepository.save(epic);
-	}
-
 }

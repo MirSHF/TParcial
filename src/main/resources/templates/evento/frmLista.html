@@ -41,7 +41,18 @@
 							<td th:text="${u.magnitud.NombreMagnitud}"></td>
 							<td th:text="${u.distrito.nombreDistrito}"></td>
 							<td th:text="${u.epicentro.radioEpicentro}"></td>
+<<<<<<< Updated upstream
 							
+=======
+
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/eventos/eliminar?id=}+${u.codigoEvento}">Eliminar
+							</a></td>
+
+							<td><a
+								type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/eventos/irmodificar/'+${u.codigoEvento}}">Actualizar
+							</a></td>
+
+>>>>>>> Stashed changes
 
 						</tr>
 

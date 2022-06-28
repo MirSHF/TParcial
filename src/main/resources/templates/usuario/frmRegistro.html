@@ -15,9 +15,14 @@
 
 		<div>
 
+<<<<<<< Updated upstream:src/main/resources/templates/usuario/frmRegistro.html
 			<form th:action="@{/usuarios/guardar}" th:object="${u}" method="post">
 
 
+=======
+			<form th:action="@{/personas/update}" th:object="${pers}"
+				method="post">
+>>>>>>> Stashed changes:src/main/resources/templates/persona/frmActualiza.html
 				<div class="col-m-12">
 					<label class="form-label">Ciudad:</label> <select
 						name="selectCiudad" class="form-control"
@@ -26,6 +31,11 @@
 							th:value="${ci.codigoCiudad}" th:text="${ci.nombreCiudad}"
 							th:selected="(${ci.codigoCiudad}==*{ciudad.codigoCiudad})"></option>
 					</select>
+				</div>
+
+				<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoPersona}" class="form-control"></input>
 				</div>
 
 				<div class="col-m-12">

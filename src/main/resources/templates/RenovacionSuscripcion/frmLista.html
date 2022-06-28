@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+
+		<hr style="background-color: #0000FF;" />
+		<div>Lista de Renovacion</div>
+		<hr style="background-color: #0000FF;" />
+
+		<div>
+
+			<div class="table-responsive">
+				<table class="table table-white">
+
+					<thead>
+
+						<tr>
+
+							<th>fecha de renovacion:</th>
+							<th>CodigoPersona:</th>
+							<th>CodigoTarjeta:</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="r:${listaRenovacionSuscripcions}">
+							<td th:text="${#dates.format(r.fechaRenovacion,'dd/MM/yyyy')}"></td>
+							<td th:text="${r.persona.nombrePersona}"></td>
+							<td th:text="${r.tarjeta.numeroTarjeta}"></td>
+							
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/renovacionsuscripcions/eliminar?id=}+${r.codigoSuscripcion}">Eliminar
+							</a></td>
+							
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/renovacionsuscripcions/irmodificar/'+${r.codigoSuscripcion}}">Actualizar
+							</a></td> 
+
+						</tr>
+
+					</tbody>
+
+
+				</table>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

@@ -41,5 +41,20 @@ public class EventoServiceImpl implements IEventoService {
 		return eventoRepository.findById(codigoEvento);
 	}
 
+<<<<<<< Updated upstream
 	
+=======
+	@Override
+	public void update(Evento even) {
+		// TODO Auto-generated method stub
+		eventoRepository.save(even);
+	}
+
+	@Override
+	public List<String[]> eventodistrito() {
+		// TODO Auto-generated method stub
+		return eventoRepository.eventodistrito();
+	}
+
+>>>>>>> Stashed changes
 }

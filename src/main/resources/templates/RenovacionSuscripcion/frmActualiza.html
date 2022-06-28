@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<hr style="background-color: #0000FF;" />
+		<div>Registro de Renovaciones</div>
+		<hr style="background-color: #0000FF;" />
+
+		<div>
+
+			<form th:action="@{/renovacionsuscripcions/guardar}"
+				th:object="${susc}" method="post">
+
+
+				<div class="col-m-12">
+					<label class="form-label">Persona:</label> <select
+						name="selectPersona" class="form-control"
+						th:field="*{persona.codigoPersona}">
+						<option th:each="pe: ${listaPersonas}"
+							th:value="${pe.codigoPersona}" th:text="${pe.nombrePersona}"
+							th:selected="(${pe.codigoPersona}==*{persona.codigoPersona})"></option>
+					</select>
+				</div>
+
+				<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoSuscripcion}" class="form-control"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label"> Fecha de Renovacion:</label> <input
+						type="date" th:field="*{fechaRenovacion}" class="form-control"></input>
+				</div>
+
+
+
+				<div class="col-m-12">
+					<label class="form-label">Codigo tarjeta:</label> <select
+						name="selectTarjeta" class="form-control"
+						th:field="*{tarjeta.codigoTarjeta}">
+						<option th:each="ta: ${listaTarjetas}"
+							th:value="${ta.codigoTarjeta}" th:text="${ta.numeroTarjeta}"
+							th:selected="(${ta.codigoTarjeta}==*{tarjeta.codigoTarjeta})"></option>
+					</select>
+				</div>
+
+
+
+				<div class="col-m-12">
+					<input type="submit" value="Actualizar" class="btn btn-dark"></input>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

@@ -12,6 +12,13 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+<<<<<<< Updated upstream
+=======
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+>>>>>>> Stashed changes
 
 import org.springframework.format.annotation.DateTimeFormat;
  
@@ -29,7 +36,13 @@ public class Evento  {
 	
 	@Column(name = "descripcionEvento", length = 100, nullable = false )
 	private String descripcionEvento;
+<<<<<<< Updated upstream
 	
+=======
+
+	@NotNull
+	@Future(message = "La fecha debe estar en futuro")
+>>>>>>> Stashed changes
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "fechaEvento", nullable = false)

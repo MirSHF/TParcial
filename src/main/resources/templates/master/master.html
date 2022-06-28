@@ -15,6 +15,8 @@
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
 
+
+
 </head>
 <body>
 
@@ -54,7 +56,7 @@
 								<li><a class="dropdown-item" th:href="@{/distritos/listar}">Listar</a></li>
 							</ul></li>
 
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">Ciudad</a>
@@ -65,7 +67,7 @@
 							</ul></li>
 
 
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">Magnitud</a>
@@ -76,7 +78,7 @@
 									th:href="@{/magnitudes/listar}">Listar</a></li>
 							</ul></li>
 
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">Banco</a>
@@ -84,15 +86,17 @@
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/bancos/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/bancos/listar}">Listar</a></li>
+								<li><a class="dropdown-item" th:href="@{/bancos/reporte}">Reporte</a></li>
 							</ul></li>
 
-						<li class="nav-item dropdown"><a
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">Epicentro</a>
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/epicentros/nuevo}">Registrar</a></li>
+<<<<<<< Updated upstream
 								<li><a class="dropdown-item" th:href="@{/epicentros/listar}">Listar</a></li>
 							</ul></li>
 
@@ -104,10 +108,88 @@
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/usuarios/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/usuarios/listar}">Listar</a></li>
+=======
+								<li><a class="dropdown-item"
+									th:href="@{/epicentros/listar}">Listar</a></li>
 							</ul></li>
 
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Personas</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/personas/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/personas/listar}">Listar</a></li>
+								<li><a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/personas/reporte}">Reporte</a></li>
+							</ul></li>
+
+
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Tarjeta</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/tarjetas/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/tarjetas/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Renovacion
+								Suscripcion</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item"
+									th:href="@{/renovacionsuscripcions/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/renovacionsuscripcions/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Evento</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/eventos/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item" th:href="@{/eventos/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Notificaciones</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item"
+									th:href="@{/notificaciones/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/notificaciones/listar}">Listar</a></li>
+							</ul></li>
+
+						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">PersonaEvento</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item"
+									th:href="@{/personaeventos/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/personaeventos/listar}">Listar</a></li>
+>>>>>>> Stashed changes
+							</ul></li>
+							<ul class="nav navbar-nav">
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar
+								sesión</a></li>
+					</ul>
+							
 					</ul>
 				</div>
+				
 			</div>
 		</nav>
 	</header>

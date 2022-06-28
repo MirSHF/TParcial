@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+
+		<hr style="background-color: #0000FF;" />
+		<div>Lista de Notificaciones</div>
+		<hr style="background-color: #0000FF;" />
+
+		<div>
+
+			<div class="table-responsive">
+				<table class="table table-white">
+
+					<thead>
+
+						<tr>
+
+							<th>Nombre del evento:</th>
+							<th>Descripción:</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="n:${listaNotificaciones}">
+
+
+							<td th:text="${n.evento.nombreEvento}"></td>
+							<td th:text="${n.descripcionNotificacion}"></td>
+
+
+							<td><a
+							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{/notificaciones/eliminar?id=}+${n.codigoNotificacion}">Eliminar
+							</a></td>
+
+							<td><a
+							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{'/notificaciones/irmodificar/'+${n.codigoNotificacion}}">Actualizar
+							</a></td>
+
+						</tr>
+
+					</tbody>
+
+
+				</table>
+			</div>
+
+		</div>
+	</div>
+</body>
+</html>

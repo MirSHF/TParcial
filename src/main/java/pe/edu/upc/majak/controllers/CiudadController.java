@@ -77,4 +77,11 @@ public class CiudadController {
 		model.addAttribute("ciud", objCiu.get());
 		return "ciudad/frmActualiza";
 	}
+	
+	
+	@PostMapping("/update")
+    public String updateSuscripcion(Ciudad c) {
+		ciuService.update(c);
+        return "redirect:/tarjetas/listar";
+    }
 }

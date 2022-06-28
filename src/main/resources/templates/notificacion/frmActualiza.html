@@ -15,9 +15,15 @@
 
 		<div>
 
-			<form th:action="@{/notificaciones/guardar}" th:object="${noti}" method="post">
+			<form th:action="@{/notificaciones/update}" th:object="${noti}"
+				method="post">
 
 
+			<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoNotificacion}" class="form-control"></input>
+				</div>
+				
 				<div class="col-m-12">
 					<label class="form-label">Evento:</label> <select
 						name="selectEvento" class="form-control"
@@ -29,13 +35,14 @@
 				</div>
 
 				<div class="col-m-12">
-					<label class="form-label">Descripción de la notificación:</label> <input type="text"
-						th:field="*{descripcionNotificacion}" class="form-control"></input>
+					<label class="form-label">Descripción de la notificación:</label> <input
+						type="text" th:field="*{descripcionNotificacion}"
+						class="form-control"></input>
 				</div>
 
-				
 
-			
+
+
 
 				<div class="col-m-12">
 					<input type="submit" value="Actualizar" class="btn btn-dark"></input>

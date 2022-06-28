@@ -39,12 +39,12 @@
 							<td th:text="${a.radioEpicentro}"></td>
 
 							<td>
-							<a th:href="@{/epicentros/eliminar?id=}+${a.idEpicentro}">Eliminar
+							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/epicentros/eliminar?id=}+${a.idEpicentro}">Eliminar
 							</a>
 							</td>
 							
 							<td>
-							<a th:href="@{'/epicentros/irmodificar/'+${a.idEpicentro}}">Actualizar
+							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/epicentros/irmodificar/'+${a.idEpicentro}}">Actualizar
 							</a>
 							</td>
 						</tr>

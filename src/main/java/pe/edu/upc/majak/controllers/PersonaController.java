@@ -79,4 +79,15 @@ public class PersonaController {
 		model.addAttribute("listaCiudades", cService.list());
 		return "persona/frmActualiza";
 	}
+	@PostMapping("/update")
+    public String updateSuscripcion(Persona p) {
+		pService.update(p);
+        return "redirect:/tarjetas/listar";
+    }
+	
+	@RequestMapping("/reporte1")
+	public String personaciudad(Map<String, Object>model) {
+		model.put("CantidadPersonas", pService.personaciudad());
+		return "persona/vista";
+	}
 }

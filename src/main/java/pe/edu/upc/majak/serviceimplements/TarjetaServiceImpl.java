@@ -10,6 +10,7 @@ import pe.edu.upc.majak.entities.Tarjeta;
 import pe.edu.upc.majak.repositories.ITarjetaRespository;
 import pe.edu.upc.majak.serviceinterface.ITarjetaService;
 
+
 @Service
 public class TarjetaServiceImpl implements ITarjetaService{
 
@@ -39,6 +40,12 @@ public class TarjetaServiceImpl implements ITarjetaService{
 	public Optional<Tarjeta> listId(int codigoTarjeta) {
 		// TODO Auto-generated method stub
 		return tRepository.findById(codigoTarjeta);
+	}
+
+	@Override
+	public void update(Tarjeta tar) {
+		// TODO Auto-generated method stub
+		tRepository.save(tar);
 	}
 
 }

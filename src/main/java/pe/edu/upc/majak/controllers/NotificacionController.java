@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pe.edu.upc.majak.entities.Notificacion;
+
 import pe.edu.upc.majak.serviceinterface.IEventoService;
 import pe.edu.upc.majak.serviceinterface.INotificacionService;
 
@@ -80,5 +81,9 @@ public class NotificacionController {
 		model.addAttribute("listaEventos", eService.list());
 		return "notificacion/frmActualiza";
 	}
-
+	@PostMapping("/update")
+    public String updateSuscripcion(Notificacion n) {
+		nService.update(n);
+        return "redirect:/notificaciones/listar";
+    }
 }

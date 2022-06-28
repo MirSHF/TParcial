@@ -26,7 +26,7 @@ public class Tarjeta {
 	//@Min(8) 
 	//@Max(8)
 	
-	@Size(min = 8, max = 8)
+	@Size(min = 8, max = 8 , message="debe tener solo 8 digitos")
 	@NotEmpty(message = "Ingrese numero")
 	@Column(name = "numeroTarjeta", length = 8, nullable = false)
 	private String numeroTarjeta;

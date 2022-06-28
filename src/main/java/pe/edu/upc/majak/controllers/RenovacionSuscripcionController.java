@@ -91,4 +91,10 @@ public class RenovacionSuscripcionController {
 		model.addAttribute("listaTarjetas", tService.list());
 		return "renovacionsuscripcion/frmActualiza";
 	}
+	
+	@PostMapping("/update")
+    public String updateSuscripcion(RenovacionSuscripcion r) {
+		rService.update(r);
+        return "redirect:/tarjetas/listar";
+    }
 }

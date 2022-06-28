@@ -38,7 +38,7 @@ public class TarjetaController {
 	}
 
 	@PostMapping("/guardar")
-	public String saveTarjeta(@Valid @ModelAttribute("t") Tarjeta objTarj, BindingResult binRes) {
+	public String saveTarjeta(Model model, @Valid @ModelAttribute("t") Tarjeta objTarj, BindingResult binRes) {
 		if (binRes.hasErrors()) {
 			return "/tarjeta/frmRegistro";
 		} else {
@@ -79,6 +79,12 @@ public class TarjetaController {
 		model.addAttribute("tarj", objTar.get());
 		model.addAttribute("listaBancos", bService.list());
 		return "tarjeta/frmActualiza";
+	}
+
+	@PostMapping("/update")
+	public String updateSuscripcion(Tarjeta t) {
+		tService.update(t);
+		return "redirect:/tarjetas/listar";
 	}
 
 }

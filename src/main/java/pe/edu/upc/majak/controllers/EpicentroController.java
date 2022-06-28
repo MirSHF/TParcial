@@ -77,4 +77,11 @@ public class EpicentroController {
 		model.addAttribute("epic", objEpi.get());
 		return "epicentro/frmActualiza";
 	}
+	
+	
+	@PostMapping("/update")
+    public String updateSuscripcion(Epicentro e) {
+		epiService.update(e);
+        return "redirect:/tarjetas/listar";
+    }
 }

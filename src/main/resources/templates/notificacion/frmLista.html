@@ -37,11 +37,11 @@
 
 
 							<td><a
-								th:href="@{/notificaciones/eliminar?id=}+${n.codigoNotificacion}">Eliminar
+							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{/notificaciones/eliminar?id=}+${n.codigoNotificacion}">Eliminar
 							</a></td>
 
 							<td><a
-								th:href="@{'/notificaciones/irmodificar/'+${n.codigoNotificacion}}">Actualizar
+							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{'/notificaciones/irmodificar/'+${n.codigoNotificacion}}">Actualizar
 							</a></td>
 
 						</tr>

@@ -39,10 +39,10 @@
 							<td th:text="${u.correoPersona}"></td>
 							<td th:text="${u.ciudad.nombreCiudad}"></td>
 							
-							<td><a th:href="@{/personas/eliminar?id=}+${u.codigoPersona}">Eliminar
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/personas/eliminar?id=}+${u.codigoPersona}">Eliminar
 							</a></td>
 							
-								<td><a th:href="@{'/personas/irmodificar/'+${u.codigoPersona}}">Actualizar
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/personas/irmodificar/'+${u.codigoPersona}}">Actualizar
 							</a></td>
 
 						</tr>

@@ -90,4 +90,10 @@ public class PersonaController {
 		model.put("CantidadPersonas", pService.personaciudad());
 		return "persona/vista";
 	}
+	
+	@RequestMapping("/reporte")
+	public String personaRenovacion(Map<String,Object>model) {
+		model.put("reporteLista", pService.personaRenovacion());
+		return "persona/vista2";
+}
 }

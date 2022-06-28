@@ -98,4 +98,10 @@ public class EventoController {
 		evService.update(e);
         return "redirect:/tarjetas/listar";
     }
+	
+	@RequestMapping("/reporte2")
+	public String eventodistrito(Map<String, Object>model) {
+		model.put("CantidadDistritos", evService.eventodistrito());
+		return "evento/vista";
+	}
 }

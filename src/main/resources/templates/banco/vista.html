@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="master/master :: head">
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 </head>
 <body>
 
@@ -10,41 +10,30 @@
 	<div class="container">
 
 		<hr style="background-color: #0000FF;" />
-		<div>Reporte</div>
+		<div>Lista de Reporte</div>
 		<hr style="background-color: #0000FF;" />
 
 		<div>
-
 			<div class="table-responsive">
 				<table class="table table-white">
-
 					<thead>
-
 						<tr>
-
-							<th>Ciudad:</th>
-							<th>Cantidad de eventos:</th>
-						
+							<th>Banco</th>
+							<th>cantidad de Tarjetas registradas</th>
+							
 
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="r:${CantidadPersonas}">
-
+						<tr th:each="r:${reporteLista}">
 							<td th:text="${r[0]}"></td>
 							<td th:text="${r[1]}"></td>
-			
 							
 						
-
 						</tr>
-
 					</tbody>
-
-
 				</table>
 			</div>
-
 		</div>
 	</div>
 </body>

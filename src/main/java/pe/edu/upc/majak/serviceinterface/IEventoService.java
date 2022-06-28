@@ -16,4 +16,5 @@ public interface IEventoService {
 
 	Optional<Evento> listId(int codigoEvento);
 	public void  update(Evento even);
+	public List<String[]>eventodistrito();
 }

@@ -24,8 +24,8 @@
 
 							<th>Nombre del evento:</th>
 							<th>Descripción:</th>
-							<th>Operacion</th>
-							<th>Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -37,11 +37,11 @@
 
 
 							<td><a
-							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{/notificaciones/eliminar?id=}+${n.codigoNotificacion}">Eliminar
+							type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')"	th:href="@{/notificaciones/eliminar?id=}+${n.codigoNotificacion}">Eliminar
 							</a></td>
 
 							<td><a
-							type="button" class="btn btn-secondary" data-dismiss="modal"	th:href="@{'/notificaciones/irmodificar/'+${n.codigoNotificacion}}">Actualizar
+							type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')"	th:href="@{'/notificaciones/irmodificar/'+${n.codigoNotificacion}}">Actualizar
 							</a></td>
 
 						</tr>

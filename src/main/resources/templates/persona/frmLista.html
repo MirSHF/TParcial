@@ -26,8 +26,8 @@
 							<th>Nombre:</th>
 							<th>Email:</th>
 							<th>Ciudad:</th>
-							<th>Operacion</th>
-							<th>Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
 
 						</tr>
 					</thead>
@@ -39,10 +39,10 @@
 							<td th:text="${u.correoPersona}"></td>
 							<td th:text="${u.ciudad.nombreCiudad}"></td>
 							
-							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/personas/eliminar?id=}+${u.codigoPersona}">Eliminar
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/personas/eliminar?id=}+${u.codigoPersona}">Eliminar
 							</a></td>
 							
-								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/personas/irmodificar/'+${u.codigoPersona}}">Actualizar
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/personas/irmodificar/'+${u.codigoPersona}}">Actualizar
 							</a></td>
 
 						</tr>

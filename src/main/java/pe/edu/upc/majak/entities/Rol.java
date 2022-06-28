@@ -10,42 +10,42 @@ import javax.persistence.Table;
 @Table(name = "rol")
 public class Rol {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
-	
-	private String nombre;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-	public long getId() {
-		return id;
-	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    private String nombre;
 
-	public String getNombre() {
-		return nombre;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public Rol(long id, String nombre) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public Rol() {
-		super();
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public Rol(String nombre) {
-		super();
-		this.nombre = nombre;
-	}
+    public Rol(long id, String nombre) {
+        super();
+        this.id = id;
+        this.nombre = nombre;
+    }
+
+    public Rol() {
+        super();
+    }
+
+    public Rol(String nombre) {
+        super();
+        this.nombre = nombre;
+    }
 
 }

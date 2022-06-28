@@ -45,4 +45,10 @@ public class BancoServiceImpl implements IBancoService {
 		bancoRepository.save(banc);
 	}
 
+	@Override
+	public List<String[]> tarjetaBanco() {
+		// TODO Auto-generated method stub
+		return bancoRepository.tarjetaBanco();
+	}
+
 }

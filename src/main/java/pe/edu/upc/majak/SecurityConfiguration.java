@@ -38,13 +38,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		auth.authenticationProvider(authenticationProvider());
 	}
 	
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(
-				"/registro**",
-				"/js/**",
-				"/css/**",
-				"/img/**").permitAll()
+		http.authorizeRequests()
+			.antMatchers("/registro**","/js/**","/css/**","/img/**").permitAll()
+			.antMatchers("/distritos").access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/ciudades").access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/magnitudes").access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/bancos").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+			.antMatchers("/epicentros").access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/personas").access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+			.antMatchers("/tarjetas").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+			.antMatchers("/renovacionsuscripcions").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+			.antMatchers("/eventos").access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/notificaciones").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+			.antMatchers("/personaeventos").access("hasRole('ROLE_ADMIN')")
+			
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()

@@ -52,6 +52,12 @@ public class PersonaServiceImpl implements IPersonaService{
 		return pRepository.personaciudad();
 	}
 
+	@Override
+	public List<String[]> personaRenovacion() {
+		// TODO Auto-generated method stub
+		return pRepository.personaRenovacion();
+	}
+
 
 
 }

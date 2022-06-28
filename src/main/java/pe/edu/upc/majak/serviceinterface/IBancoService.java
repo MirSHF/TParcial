@@ -15,4 +15,6 @@ public interface IBancoService {
 
 	Optional<Banco> listId(int codigoBanco);
 	public void  update(Banco banc);
+	
+	public List<String[]>tarjetaBanco();
 }

@@ -83,6 +83,10 @@ public class BancoController {
        banService.update(b);
         return "redirect:/tarjetas/listar";
     }
-
+	@RequestMapping("/reporte")
+	public String tarjetaBanco(Map<String,Object>model) {
+		model.put("reporteLista", banService.tarjetaBanco());
+		return "banco/vista";
+	}
 	
 }

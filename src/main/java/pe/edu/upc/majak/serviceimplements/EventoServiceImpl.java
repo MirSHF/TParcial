@@ -46,4 +46,10 @@ public class EventoServiceImpl implements IEventoService{
 		eventoRepository.save(even);
 	}
 
+	@Override
+	public List<String[]> eventodistrito() {
+		// TODO Auto-generated method stub
+		return eventoRepository.eventodistrito();
+	}
+
 }

@@ -74,7 +74,7 @@
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/bancos/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/bancos/listar}">Listar</a></li>
-								<li><a class="dropdown-item" th:href="@{/bancos/reporte}">Reporte</a></li>
+								<li><a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/bancos/reporte}">Reporte</a></li>
 							</ul></li>
 
 						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN')"><a
@@ -96,6 +96,8 @@
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/personas/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/personas/listar}">Listar</a></li>
+								<li><a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/personas/reporte1}">Reporte</a></li>
+								<li><a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/personas/reporte}">Reporte</a></li>
 							</ul></li>
 
 
@@ -130,6 +132,7 @@
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/eventos/nuevo}">Registrar</a></li>
 								<li><a class="dropdown-item" th:href="@{/eventos/listar}">Listar</a></li>
+								<li><a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/eventos/reporte2}">Reporte</a></li>
 							</ul></li>
 
 						<li class="nav-item dropdown" sec:authorize="hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')"><a
@@ -156,7 +159,7 @@
 									th:href="@{/personaeventos/listar}">Listar</a></li>
 							</ul></li>
 							<ul class="nav navbar-nav">
-						<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar
+						<li  type="button" class="btn btn-success" sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Cerrar
 								sesión</a></li>
 					</ul>
 							

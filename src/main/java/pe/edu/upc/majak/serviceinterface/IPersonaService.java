@@ -17,4 +17,5 @@ public interface IPersonaService {
 	Optional<Persona> listId(int codigoPersona);
 	public void  update(Persona pers);
 	public List<String[]>personaciudad();
+	public List<String[]>personaRenovacion();
 }

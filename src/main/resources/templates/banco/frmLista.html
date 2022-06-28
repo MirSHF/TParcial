@@ -20,8 +20,8 @@
 						<tr>
 							<th>Id</th>
 							<th>Nombre de Banco</th>
-							<th>Operacion</th>
-							<th>Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
 
 						</tr>
 					</thead>
@@ -29,9 +29,9 @@
 						<tr th:each="a:${listaBancos}">
 							<td th:text="${a.CodigoBanco}"></td>
 							<td th:text="${a.NombreBanco}"></td>
-							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/bancos/eliminar?id=}+${a.codigoBanco}">Eliminar
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/bancos/eliminar?id=}+${a.codigoBanco}">Eliminar
 							</a></td>
-							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/bancos/irmodificar/'+${a.codigoBanco}}">Actualizar
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')"  th:href="@{'/bancos/irmodificar/'+${a.codigoBanco}}">Actualizar
 							</a></td>
 						</tr>
 					</tbody>

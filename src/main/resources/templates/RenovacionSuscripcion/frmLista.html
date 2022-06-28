@@ -25,8 +25,8 @@
 							<th>fecha de renovacion:</th>
 							<th>CodigoPersona:</th>
 							<th>CodigoTarjeta:</th>
-							<th>Operacion</th>
-							<th>Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -35,10 +35,10 @@
 							<td th:text="${r.persona.nombrePersona}"></td>
 							<td th:text="${r.tarjeta.numeroTarjeta}"></td>
 							
-							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/renovacionsuscripcions/eliminar?id=}+${r.codigoSuscripcion}">Eliminar
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/renovacionsuscripcions/eliminar?id=}+${r.codigoSuscripcion}">Eliminar
 							</a></td>
 							
-								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/renovacionsuscripcions/irmodificar/'+${r.codigoSuscripcion}}">Actualizar
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/renovacionsuscripcions/irmodificar/'+${r.codigoSuscripcion}}">Actualizar
 							</a></td> 
 
 						</tr>

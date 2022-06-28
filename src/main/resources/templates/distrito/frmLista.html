@@ -23,8 +23,8 @@
 
 							<th>ID:</th>
 							<th>Nombre:</th>
-							<th>Operación:</th>
-							<th>Operación:</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')" >Operación:</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')" >Operación:</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -33,12 +33,12 @@
 							<td th:text="${a.nombreDistrito}"></td>
 
 							<td>
-							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/distritos/eliminar?id=}+${a.codigoDistrito}">Eliminar
+							<a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/distritos/eliminar?id=}+${a.codigoDistrito}">Eliminar
 							</a>
 							</td>
 							
 							<td>
-							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/distritos/irmodificar/'+${a.codigoDistrito}}">Actualizar
+							<a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/distritos/irmodificar/'+${a.codigoDistrito}}">Actualizar
 							</a>
 							</td>
 						</tr>

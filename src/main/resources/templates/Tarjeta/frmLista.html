@@ -24,8 +24,8 @@
 
 							<th>Numero de tarjeta:</th>
 							<th>Banco:</th>
-							<th>Operacion</th>
-							<th>Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
+							<th sec:authorize="hasRole('ROLE_ADMIN')">Operacion</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -34,10 +34,10 @@
 							<td th:text="${t.numeroTarjeta}"></td>
 							<td th:text="${t.banco.nombreBanco}"></td>
 							
-							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
 							</a></td>
 							
-								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
 							</a></td>
 
 						</tr>

@@ -39,4 +39,16 @@ public class BancoServiceImpl implements IBancoService {
 		return bancoRepository.findById(codigoBanco);
 	}
 
+	@Override
+	public void update(Banco banc) {
+		// TODO Auto-generated method stub
+		bancoRepository.save(banc);
+	}
+
+	@Override
+	public List<String[]> tarjetaBanco() {
+		// TODO Auto-generated method stub
+		return bancoRepository.tarjetaBanco();
+	}
+
 }

@@ -10,7 +10,7 @@
 	<div class="container">
 
 		<hr style="background-color: #0000FF;" />
-		<div>Lista de Bancos</div>
+		<div>Lista de Tarjetas</div>
 		<hr style="background-color: #0000FF;" />
 
 		<div>
@@ -34,10 +34,10 @@
 							<td th:text="${t.numeroTarjeta}"></td>
 							<td th:text="${t.banco.nombreBanco}"></td>
 							
-							<td><a th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
+							<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/tarjetas/eliminar?id=}+${t.codigoTarjeta}">Eliminar
 							</a></td>
 							
-								<td><a th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
+								<td><a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/tarjetas/irmodificar/'+${t.codigoTarjeta}}">Actualizar
 							</a></td>
 
 						</tr>

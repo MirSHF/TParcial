@@ -11,9 +11,9 @@
 	<div class="container">
 		<div>
 
-			<form th:action="@{/personas/guardar}" th:object="${pers}"
+			<form th:action="@{/personas/update}" th:object="${pers}"
 				method="post">
-		<div class="col-m-12">
+				<div class="col-m-12">
 					<label class="form-label">Ciudad:</label> <select
 						name="selectCiudad" class="form-control"
 						th:field="*{ciudad.codigoCiudad}">
@@ -21,6 +21,11 @@
 							th:value="${ci.codigoCiudad}" th:text="${ci.nombreCiudad}"
 							th:selected="(${ci.codigoCiudad}==*{ciudad.codigoCiudad})"></option>
 					</select>
+				</div>
+
+				<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoPersona}" class="form-control"></input>
 				</div>
 
 				<div class="col-m-12">

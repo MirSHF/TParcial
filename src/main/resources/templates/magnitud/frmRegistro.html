@@ -22,16 +22,35 @@
 				</div>
 
 
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Nombre
+					de Magnitud</label>
 				<div class="col-sm-12">
-					<label class="form-label"> Nombre de Magnitud:</label> <input
-						type="text" th:field="*{NombreMagnitud}" class="form-control"></input>
+					<input type="text" th:field="*{NombreMagnitud}"
+						class="form-control" /> <small
+						th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('NombreMagnitud')}"
+						th:errors="*{NombreMagnitud}"></small>
 				</div>
 
 
 
-				<div class="col-sm-12">
-					<label class="form-label"> Escala de Magnitud:</label> <input
-						type="text" th:field="*{EscalaMagnitud}" class="form-control"></input>
+				
+						
+						<label for="nroTarjeta">Escala de magnitud
+						:</label> <select th:field="*{EscalaMagnitud}" name="magn" id="magn">
+						<option th:value="1">1</option>
+						<option th:value="2">2</option>
+						<option th:value="3">3</option>
+						<option th:value="4">4</option>
+						<option th:value="5">5</option>
+						<option th:value="6">6</option>
+						<option th:value="7">7</option>
+						<option th:value="8">8</option>
+						
+					</select>
+
+
 				</div>
 
 

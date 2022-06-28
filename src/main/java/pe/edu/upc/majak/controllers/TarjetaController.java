@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +38,7 @@ public class TarjetaController {
 	}
 
 	@PostMapping("/guardar")
-	public String saveTarjeta(@Valid Tarjeta objTarj, BindingResult binRes) {
+	public String saveTarjeta(Model model, @Valid @ModelAttribute("t") Tarjeta objTarj, BindingResult binRes) {
 		if (binRes.hasErrors()) {
 			return "/tarjeta/frmRegistro";
 		} else {
@@ -45,18 +46,18 @@ public class TarjetaController {
 			return "redirect:/tarjetas/nuevo";
 		}
 	}
-	
+
 	@GetMapping("/listar")
 	public String listTarjetas(Model model) {
 		try {
 			model.addAttribute("listaTarjetas", tService.list());
-		}catch (Exception e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			model.addAttribute("error", e.getMessage());
 		}
 		return "/tarjeta/frmLista";
 	}
-	
+
 	@RequestMapping("/eliminar")
 	public String deleteTarjeta(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
 		try {
@@ -79,5 +80,11 @@ public class TarjetaController {
 		model.addAttribute("listaBancos", bService.list());
 		return "tarjeta/frmActualiza";
 	}
-	
+
+	@PostMapping("/update")
+	public String updateSuscripcion(Tarjeta t) {
+		tService.update(t);
+		return "redirect:/tarjetas/listar";
+	}
+
 }

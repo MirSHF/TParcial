@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +37,7 @@ public class PersonaController {
 	}
 
 	@PostMapping("/guardar")
-	public String saveUsuario(@Valid Persona objPers, BindingResult binRes) {
+	public String saveUsuario(@Valid @ModelAttribute("p") Persona objPers, BindingResult binRes) {
 		if (binRes.hasErrors()) {
 			return "/persona/frmRegistro";
 		} else {
@@ -77,5 +78,16 @@ public class PersonaController {
 		model.addAttribute("pers", objPer.get());
 		model.addAttribute("listaCiudades", cService.list());
 		return "persona/frmActualiza";
+	}
+	@PostMapping("/update")
+    public String updateSuscripcion(Persona p) {
+		pService.update(p);
+        return "redirect:/tarjetas/listar";
+    }
+	
+	@RequestMapping("/reporte1")
+	public String personaciudad(Map<String, Object>model) {
+		model.put("CantidadPersonas", pService.personaciudad());
+		return "persona/vista";
 	}
 }

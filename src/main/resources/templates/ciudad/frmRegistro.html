@@ -9,24 +9,30 @@
 	<header th:replace="master/master :: header"></header>
 
 	<div class="container">
-	<hr style="background-color: #0000FF;" /> 
-			<div>Registro de Ciudades</div> 
 		<hr style="background-color: #0000FF;" />
-	
+		<div>Registro de Ciudades</div>
+		<hr style="background-color: #0000FF;" />
+
 		<div>
 
-			<form th:action="@{/ciudades/guardar}" th:object="${c}"
-				method="post">
+			<form th:action="@{/ciudades/guardar}" th:object="${c}" method="post">
 
 				<div class="col-m-12">
 					<label class="form-label">ID:</label> <input type="text"
 						th:field="*{codigoCiudad}" class="form-control"></input>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Nombre:</label> <input type="text"
-						th:field="*{nombreCiudad}" class="form-control"></input>
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Nombre de ciudad
+				</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{nombreCiudad}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('nombreCiudad')}"
+						th:errors="*{nombreCiudad}"></small>
 				</div>
+
 
 
 				<div class="col-m-12">

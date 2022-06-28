@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "usuarios", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
@@ -23,13 +24,18 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@NotEmpty(message = "Ingrese nombre")
 	@Column(name = "nombre")
 	private String nombre;
 
+	@NotEmpty(message = "Ingrese apellido")
 	@Column(name = "apellido")
 	private String apellido;
 
+	@NotEmpty(message = "Ingrese un correo")
 	private String email;
+	
+	@NotEmpty(message = "Ingrese una contraseña")
 	private String password;
 	
 	

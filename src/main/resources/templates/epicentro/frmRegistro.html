@@ -23,19 +23,32 @@
 						th:field="*{idEpicentro}" class="form-control"></input>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Latitud:</label> <input type="text"
-						th:field="*{latitud}" class="form-control"></input>
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Latitud</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{latitud}" class="form-control" /> <small
+						th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('latitud')}" th:errors="*{latitud}"></small>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Altitud:</label> <input type="text"
-						th:field="*{altitud}" class="form-control"></input>
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Altitud</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{altitud}" class="form-control" /> <small
+						th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('altitud')}" th:errors="*{altitud}"></small>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Radio:</label> <input type="text"
-						th:field="*{radioEpicentro}" class="form-control"></input>
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Radio</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{radioEpicentro}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('radioEpicentro')}"
+						th:errors="*{radioEpicentro}"></small>
 				</div>
 
 

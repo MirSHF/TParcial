@@ -40,4 +40,10 @@ public class CiudadServiceImpl implements ICiudadService {
 		return ciudadRepository.findById(codigoCiudad);
 	}
 
+	@Override
+	public void update(Ciudad ciud) {
+		// TODO Auto-generated method stub
+		ciudadRepository.save(ciud);
+	}
+
 }

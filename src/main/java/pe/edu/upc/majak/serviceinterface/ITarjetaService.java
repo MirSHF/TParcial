@@ -14,4 +14,6 @@ public interface ITarjetaService {
 	public void delete(int codigoTarjeta);
 
 	Optional<Tarjeta> listId(int codigoTarjeta);
+	
+	public void  update(Tarjeta tar);
 }

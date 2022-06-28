@@ -15,8 +15,8 @@
 
 		<div>
 
-			<form th:action="@{/renovacionsuscripcions/guardar}" th:object="${susc}"
-				method="post">
+			<form th:action="@{/renovacionsuscripcions/guardar}"
+				th:object="${susc}" method="post">
 
 
 				<div class="col-m-12">
@@ -27,6 +27,11 @@
 							th:value="${pe.codigoPersona}" th:text="${pe.nombrePersona}"
 							th:selected="(${pe.codigoPersona}==*{persona.codigoPersona})"></option>
 					</select>
+				</div>
+
+				<div class="col-sm-3">
+					<label class="form-label">Id:</label> <input type="text"
+						th:field="*{codigoSuscripcion}" class="form-control"></input>
 				</div>
 
 				<div class="col-sm-12">
@@ -49,7 +54,7 @@
 
 
 				<div class="col-m-12">
-					<input type="submit" value="Registrar" class="btn btn-dark"></input>
+					<input type="submit" value="Actualizar" class="btn btn-dark"></input>
 				</div>
 
 			</form>

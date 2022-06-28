@@ -15,7 +15,7 @@
 
 		<div>
 
-			<form th:action="@{/personas/guardar}" th:object="${p}" method="post">
+			<form th:action="@{/personas/guardar}" th:object="${p}" method="post" >
 
 
 				<div class="col-m-12">
@@ -28,20 +28,35 @@
 					</select>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">DNI:</label> <input type="text"
-						th:field="*{dniPersona}" class="form-control"></input>
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">DNI</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{dniPersona}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('dniPersona')}"
+						th:errors="*{dniPersona}"></small>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Nombre:</label> <input type="text"
-						th:field="*{nombrePersona}" class="form-control"></input>
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Nombre</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{nombrePersona}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('nombrePersona')}"
+						th:errors="*{nombrePersona}"></small>
 				</div>
 
-				<div class="col-m-12">
-					<label class="form-label">Email:</label> <input type="text"
-						th:field="*{correoPersona}" class="form-control"></input>
+
+
+				<label for="nroTarjeta" class="col-sm-2 col-form-label">Email</label>
+				<div class="col-sm-12">
+					<input type="text" th:field="*{correoPersona}" class="form-control" />
+					<small th:errorclass="'form-control alert-danger'"
+						th:if="${#fields.hasErrors('correoPersona')}"
+						th:errors="*{correoPersona}"></small>
 				</div>
+
+
 
 				<div class="col-m-12">
 					<input type="submit" value="Registrar" class="btn btn-dark"></input>

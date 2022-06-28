@@ -40,4 +40,10 @@ public class RenovacionSuscripcionServiceImpl implements IRenovacionSuscripcionS
 		return rRepository.findById(codigoSuscripcion);
 	}
 
+	@Override
+	public void update(RenovacionSuscripcion renov) {
+		// TODO Auto-generated method stub
+		rRepository.save(renov);
+	}
+
 }

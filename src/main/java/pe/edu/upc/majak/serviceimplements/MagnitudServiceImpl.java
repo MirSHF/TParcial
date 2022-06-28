@@ -39,4 +39,10 @@ public class MagnitudServiceImpl implements IMagnitudService{
 		return magnitudRepository.findById(CodigoMagnitud);
 	}
 
+	@Override
+	public void update(Magnitud magn) {
+		// TODO Auto-generated method stub
+		magnitudRepository.save(magn);
+	}
+
 }

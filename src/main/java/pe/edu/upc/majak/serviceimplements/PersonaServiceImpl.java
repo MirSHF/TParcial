@@ -40,4 +40,18 @@ public class PersonaServiceImpl implements IPersonaService{
 		return pRepository.findById(codigoPersona);
 	}
 
+	@Override
+	public void update(Persona pers) {
+		// TODO Auto-generated method stub
+		pRepository.save(pers);
+	}
+
+	@Override
+	public List<String[]> personaciudad() {
+		// TODO Auto-generated method stub
+		return pRepository.personaciudad();
+	}
+
+
+
 }

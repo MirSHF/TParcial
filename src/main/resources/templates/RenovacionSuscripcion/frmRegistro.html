@@ -29,10 +29,24 @@
 					</select>
 				</div>
 
+
+
+
+				<label for="fechaNacimientoPersona" class="col-sm-2 col-form-label">Fecha
+					de Renovacion </label>
 				<div class="col-sm-12">
-					<label class="form-label"> Fecha de Renovacion:</label> <input
-						type="date" th:field="*{fechaRenovacion}" class="form-control"></input>
+					<input type="date" th:field="*{fechaRenovacion}"
+						class="form-control">
+					<div th:object="${r}" th:remove="tag">
+						<ul th:if="${#fields.hasErrors('*')}" class="alert alert-danger"
+							role="alert">
+							<li th:each="error : ${#fields.errors('*')}" th:text="${error}"></li>
+						</ul>
+					</div>
 				</div>
+
+			
+
 
 
 

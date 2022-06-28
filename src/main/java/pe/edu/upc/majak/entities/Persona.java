@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Persona")
@@ -17,12 +19,16 @@ public class Persona {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int codigoPersona;
 
+	@Size(min = 8, max = 8)
+	@NotEmpty(message = "Ingresa DNI")
 	@Column(name = "dniPersona", length = 15, nullable = false)
 	private String dniPersona;
 
+	@NotEmpty(message = "Ingresa Nombre")
 	@Column(name = "nombrePersona", length = 25, nullable = false)
 	private String nombrePersona;
 
+	@NotEmpty(message = "Ingresa Correo")
 	@Column(name = "correoPersona", length = 25, nullable = false)
 	private String correoPersona;
 
@@ -83,6 +89,5 @@ public class Persona {
 	public void setCiudad(Ciudad ciudad) {
 		this.ciudad = ciudad;
 	}
-
 
 }

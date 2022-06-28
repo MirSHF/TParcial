@@ -33,12 +33,12 @@
 							<td th:text="${a.nombreDistrito}"></td>
 
 							<td>
-							<a th:href="@{/distritos/eliminar?id=}+${a.codigoDistrito}">Eliminar
+							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{/distritos/eliminar?id=}+${a.codigoDistrito}">Eliminar
 							</a>
 							</td>
 							
 							<td>
-							<a th:href="@{'/distritos/irmodificar/'+${a.codigoDistrito}}">Actualizar
+							<a type="button" class="btn btn-secondary" data-dismiss="modal" th:href="@{'/distritos/irmodificar/'+${a.codigoDistrito}}">Actualizar
 							</a>
 							</td>
 						</tr>
